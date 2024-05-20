@@ -2349,42 +2349,46 @@ GitHub:</li>
 </div>
 <h3 id="ejercicio-2">Ejercicio 2</h2>
 <p>Crear un repositorio nuevo con el nombre <code>libro-nombredegrupo</code> y mostrar su contenido<a href="#section-fn5" class="footnote-ref" id="section-fnref5"><sup>5</sup></a>. Cada grupo <strong>solo creará uno</strong>, y un estudiante será el responsable de subirlo a GitHub. El resto deberá clonarlo en local.</p>
-<div class="spoiler " >
-<p>
-<a class="btn btn-primary" data-toggle="collapse" href="#spoiler-2" role="button" aria-expanded="false" aria-controls="spoiler-2">
-  Solución-creador-repo
-</a>
-</p>
-<div class="collapse card " id="spoiler-2">
-<div class="card-body">
-  <code class="language-sh"><p>Creador del repositorio</p>&gt; mkdir libro-nombredegrupo #Este punto puede ser realizado mediante la forma corriente de crear directorios, es decir carpetas nuevas
-&gt; cd libro-nombredegrupo #ingresar a la carpeta creada
-&gt; git init 
-&gt; git add .
-&gt; git commit -m "primer repositorio"
-&gt; git remote add origin https://github.com/NOMBRE_USUARIO/NOMBRE_PROYECTO.git
-&gt; git branch -M main
-&gt; git push -f -u origin main
-</code>
-</div>
-</div>
-</div>  
-<div class="spoiler " >
-  <p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#spoiler-3" role="button" aria-expanded="false" aria-controls="spoiler-3">
-    Solución-colaboradores
-  </a>
-  </p>
-<div class="collapse card " id="spoiler-3">
-  <div class="card-body">
-    <code class="language-sh"><p>Colaboradores del repositorio, utilizar la url de Clone Https</p>&gt; git clone https://github.com/NOMBRE_USUARIO/NOMBRE_PROYECTO.git
-  &gt; git init
-  &gt; git pull
-  </code>
+<div class="spoiler">
+    <p>
+      <a class="btn btn-primary" data-toggle="collapse" href="#spoiler-2" role="button" aria-expanded="false" aria-controls="spoiler-2">
+        Solución-creador-repo
+      </a>
+    </p>
+    <div class="collapse card" id="spoiler-2">
+      <div class="card-body">
+        <code class="language-sh">
+          <p>Creador del repositorio</p>
+          &gt; mkdir libro-nombredegrupo #Este punto puede ser realizado mediante la forma corriente de crear directorios, es decir carpetas nuevas<br>
+          &gt; cd libro-nombredegrupo #ingresar a la carpeta creada<br>
+          &gt; git init<br>
+          &gt; git add .<br>
+          &gt; git commit -m "primer repositorio"<br>
+          &gt; git remote add origin https://github.com/NOMBRE_USUARIO/NOMBRE_PROYECTO.git<br>
+          &gt; git branch -M main<br>
+          &gt; git push -f -u origin main
+        </code>
+      </div>
+    </div>
   </div>
+  <div class="spoiler">
+    <p>
+      <a class="btn btn-primary" data-toggle="collapse" href="#spoiler-3" role="button" aria-expanded="false" aria-controls="spoiler-3">
+        Solución-colaboradores
+      </a>
+    </p>
+    <div class="collapse card" id="spoiler-3">
+      <div class="card-body">
+        <code class="language-sh">
+          <p>Colaboradores del repositorio, utilizar la url de Clone Https</p>
+          &gt; git clone https://github.com/NOMBRE_USUARIO/NOMBRE_PROYECTO.git<br>
+          &gt; git init<br>
+          &gt; git pull
+        </code>
+      </div>
+    </div>
   </div>
 </div>
-
 <h2 id="ejercicio-3">Ejercicio 3</h2>
 <ol>
 <li>
