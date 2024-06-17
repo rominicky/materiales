@@ -2093,7 +2093,7 @@
     <li><a href="#importar-datos">Importar y exportar datos</a></li>
     <li><a href="#descargar-datos">Descargar datos de internet</a></li>
     <li><a href="#visualizacion-informacion">Visualización de la información</a></li>
-    <li><a href="#ejercicio">Ejercitación propuesta</a></li>
+    <li><a href="#ejercitacion">Ejercitación propuesta</a></li>
     <!-- más títulos h1 -->
   </ul>
 </nav></div>
@@ -2230,7 +2230,7 @@ provincias &lt;- read_csv(destino)
   </p>
   <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw">provincias <- read.csv('C:/git/materiales/assets/Provincias.csv') #en Windows si no reconoce las comillas probar las simples</span></code></pre></div>
   <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw">View(provincias) #para que abra el archivo que cargamos</span></code></pre></div>
-  <p><img src="img/provincias.png" width="672" /></p>
+  <p><img src="img/provincias.png" width="1344" /></p>
   <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw">library(tidyverse) #libreria para manipular datos</span></code></pre></div>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw">provincias <- provincias %>%
   rename(situacion_calle = Personas.en.situación.de.calle..vía.pública.)</span></code></pre></div>
@@ -2255,7 +2255,7 @@ ggplot(provincias, aes(x = reorder(Nombre.de.provincia, situacion_calle), y = si
   
   <p>En nuestro caso utilizamos <code>geom_bar()</code>, que cuenta las ocurrencias para cada categoría de una variable. Existen muchas funciones de tipo “geom_XXX”, que agregan distintas clases de capas al gráfico: geom_point, geom_polygon, geom_text y muchos, muchos más que iremos viendo más adelante.<a href="#section-fn1" class="footnote-ref" id="section-fnref1"><sup>1</sup></a></p> 
   <p>Para esta librería cada función “geom_” añade parámetros que le indican qué graficar, cómo (color, tamaño, etc.) y dónde (posición x, posición y del eje). Estos parámetros se incluyen dentro de una función auxiliar, <code>aes()</code>.</p>
-  <p><img src="img/situacion_calle-provincias.png" width="672" /></p>
+  <p><img src="img/situacion_calle-provincias.png" width="1344" /></p>
   <p>Realizamos un gráfico similar pero con la <span>media</span></p>
   <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw"># Graficamos con barras apiladas la media
 ggplot(subset(media_situacion_calle, media_situacion_calle > 0), 
@@ -2267,7 +2267,7 @@ ggplot(subset(media_situacion_calle, media_situacion_calle > 0),
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "none")  # Eliminamos la leyenda</span></code></pre></div>
-<p><img src="img/media-sit-calle-prov.png" width="672" /></p>
+<p><img src="img/media-sit-calle-prov.png" width="1344" /></p>
   <p>Ahora realizaremos un gráfico comparando los datos de problación total del Censo 2022 y las personas en situación de calle por provincias.</p>
   <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw"># Gráfico comparativo
 ggplot(provincias, aes(x = Nombre.de.provincia, y = Población..2022., fill = situacion_calle)) +
@@ -2279,7 +2279,7 @@ ggplot(provincias, aes(x = Nombre.de.provincia, y = Población..2022., fill = si
        fill = "Personas en situación de calle") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotamos a 45º las etiquetas del eje x</span></code></pre></div>
-  <img src="img/poblacion-vs-sit_calle.png" width="672">
+  <img src="img/poblacion-vs-sit_calle.png" width="1344">
   <p>En este gráfico hemos modificado el tipo de barras, para ser apiladas, indicandole que el color lo tome según las personas en situación de calle, y para ello modificamos la escala de colores. En labs indicamos con <code>fill = "Personas en situación de calle"</code> el color asociado a la cantidad de personas que viven en la calle por provincias, que se compara con la barra de Población del Censo 2022.</p>
  
   <p>En estas representaciones sólo se demostraron algunas funciones de la librería <code>ggplot</code> y <code>tidyverse</code><a href="#section-fn2" class="footnote-ref" id="section-fnref2"><sup>2</sup></a>, pueden seguir probando variedades modificando parámetros, así como otras variables que graficar, y trabajar con datos.</p>
