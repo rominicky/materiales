@@ -51,7 +51,7 @@ Una vez instalado, [![abra Anaconda Navigator](https://docs.anaconda.com/_images
 
 ### Descargue las notebooks de GitHub
 
-Vaya a la [página de GitHub](https://github.com/mchesterkadwell/intro-to-text-mining-with-python-2020)
+Vaya a la [página de GitHub](https://github.com/rominicky/materiales/mineria-texto)
 donde se guarda este repositorio de código. Haga clic en el botón verde "Código" en la parte superior derecha de la página.
 
 ![](assets/download-or-clone.png)
