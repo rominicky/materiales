@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-análisis textual estadístico</title>
+    <style type="text/css">
+      /* Global styles */
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 1.42857143;
+        color: #333;
+        background-color: #fff;
+        margin: 2cm 1cm; /* Simplified margin shorthand */
+      }
+  
+      /* Code styles */
+      code {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        padding: 2px 4px;
+        font-size: 90%;
+        color: #c7254e;
+        background-color: #f9f2f4;
+        border-radius: 4px;
+      }
+  
+      /* Preformatted text styles */
+      pre {
+        display: block;
+        padding: 9.5px;
+        margin: 0 0 10px;
+        font-size: 13px;
+        line-height: 1.42857143;
+        color: #333;
+        word-break: break-all;
+        word-wrap: break-word;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      pre code {
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+        white-space: pre-wrap;
+        background-color: transparent;
+        border-radius: 0;
+      }
+  
+      /* Scrollable preformatted text styles */
+      .pre-scrollable {
+        max-height: 340px;
+        overflow-y: scroll;
+      }
+  
+      /* Container styles */
+      .main-container {
+        max-width: 940px;
+        margin: 0 auto; /* Simplified margin shorthand */
+      }
+      .container-fluid {
+        padding: 0 15px;
+      }
+  
+      /* Image styles */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romina De León</title>
+     <!-- CSS: Inside head tag -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">  
+     <!-- Devicon: Programming languages icons --> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> 
+    <style>
+        I {
+            font-size: 3em;
+        }
+    </style>
+     <!-- fonticon icons -->     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .social-icon {
+            font-size: 24px; /* Tamaño de los iconos */
+        }
+
+        .social-name {
+            font-size: 16px; /* Tamaño de los nombres */
+        }
+        .footnote {
+          margin: 0; /* elimina el margen superior e inferior */
+          padding: 0; /* elimina el relleno superior e inferior */
+        }
+        .footnote {
+          font-size: 1em;
+          font-family: inherit;
+          text-decoration: none;
+          margin: 0;
+          padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark ">
+        <div class="container-fluid">
+            <div class="mx-4">
+                <a class="navbar-brand" href="materiales.html">Materiales</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="descargas.html">Descargas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container-fluid main-container">
+<div id="header">
+
+<h1 class="title toc-ignore"> Primeros análisis en RStudio</h1>
+</div>
+<div id="romina-de-león" class="section level4">
+<h4><strong>Romina De León</strong></h4>
+<a href="mailto:romideleon@gmail.com" class="email">romideleon@gmail.com</a>
+
+<div class="container-fluid main-container">
+  <nav id="index">
+  <h2>Índice</h2>
+  <ul>
+    <li><a href="#objetos">Tipos de objetos</a></li>
+    <li><a href="#data-frame">Data Frames</a></li>
+    <li><a href="#importar-datos">Importar y exportar datos</a></li>
+    <li><a href="#descargar-datos">Descargar datos de internet</a></li>
+    <li><a href="#visualizacion-informacion">Visualización de la información</a></li>
+    <li><a href="#ejercitacion">Ejercitación propuesta</a></li>
+    <!-- más títulos h1 -->
+  </ul>
+</nav></div>
+<div class="container-fluid main-container">
+  <div id="unidad-instalaciones" class="section level3"></div>
+
+<div class="container-fluid main-container">
+<div id="objetos" class="section level3">
+<h3>Tipos de objetos</h3>
+<p>R trabaja con los siguientes tipos de objetos:</p>
+<ul>
+<li>Vectores</li>
+<li>Matrices y Arrays (variables indexadas)</li>
+<li>Listas</li>
+<li>Factores</li>
+<li>Data Frames</li>
+<li>Funciones</li>
+</ul>
+<p>No te preocupes si no estas familiarizadx con estas nociones, pues iremos brindando la información necesaria a medida que trabajemos con estos tipos de datos en el curso.</p>
+</div>
+<div id="vectores" class="section level3">
+<h3>Vectores</h3>
+<p>Se nombran mediante la función <code>c()</code> (c de concatenate)</p>
+<pre class="r"><code>x &lt;- c(1,2,3,4)</code></pre>
+<p>Así, <code>x</code> es un vector que tiene cuatro componentes.</p>
+<p>Para llamar/seleccionar elementos de un objeto se utilizan diferentes notaciones (<code>[], $, [[]]</code>). Por ejemplo, para seleccionar el segundo elemento del vector anterior, podemos hacer::</p>
+<pre class="r"><code>x[2]
+## [1] 2</code></pre>
+<p>Más detalladamente:</p>
+<p>‘[]’ se utiliza para extraer uno o más elementos de la misma clase.</p>
+<p>‘[[]]’ sirve para extraer elementos de distinta clase de un dataframe o de una lista.</p>
+<p>‘$’ permite extraer elementos invocándolos por su nombre, por ejemplo, las columnas de un dataframe.</p>
+</div>
+<div id="matrices" class="section level3">
+<h3>Matrices</h3>
+<p>La función matrix() permite organizar los datos en una matriz con tantas filas y columnas como se necesite (indicadas por <code>nrow</code> y <code>ncol</code> respectivamente). Por ejemplo:</p>
+<pre class="r"><code>x &lt;- matrix (data= c(1,2,3,4), nrow=2, ncol=2)</code></pre>
+<p>o</p>
+<pre class="r"><code>x &lt;- matrix (c(1,2,3,4), nrow=2, ncol=2)</code></pre>
+<p>Crea una matriz de 2x2 (2 filas y 2 columnas). Aquíse ha rellenado por columnas; si lo que deseas que se complete por filas, deberás incluir: ‘byrow’ en la función.</p>
+<div id="añadir-filascolumnas" class="section level4">
+<h4>Añadir filas/columnas</h4>
+<p>Al trabajar con matrices, vectores o dataframes, se utilizan dos funciones muy útiles: ‘rbind’ y ‘cbind’. La primera sirve para añadir filas (<em>row bind</em>) y la segunda para añadir columnas (<em>column bind</em>).</p>
+<pre class="r"><code>x &lt;- matrix(c(7,8,9,10),2,2) #creamos una matriz
+y &lt;- c(5,6) #creamos un vector
+
+# Ahora añadiremos, por filas, los datos contenidos en el objeto &#39;y&#39; al objeto &#39;x&#39;
+z &lt;- rbind(x,y)
+
+#Si queremos añadir los datos de &#39;y&#39; a los de &#39;x&#39; por columnas
+w&lt;- cbind(x,y)</code></pre>
+<p><mark>IMPORTANTE: Si las filas (o columnas) del objeto que añadimos no son múltiplo de las filas (o columnas) del objeto al que se añaden, R emitirá un mensaje de aviso (Warning message). Siempre es fundamental considerar que la dimensión de lo que agregamos quepa en la matriz.</mark></p>
+</div>
+</div>
+<div id="data-frame" class="section level3">
+<h3>Data Frames</h3>
+<p>Los dataframes son el plato fuerte de R. Se usan para almacenar datos en forma de tablas (filas / columnas), como archivos de Excel, CSV, etc. Pueden almacenar datos de diferente tipo, como ser datos numéricos, textuales, fechas, etc. Los dataframes pueden ser onsiderados como un tipo especial de lista donde cada uno de sus elementos debe tener la misma longitud.</p>
+<p>Generalmente, los dataframes se crean al cargar/leer una base de datos. Podemos ver un ejemplo de dataframe predefinido en R Studio, escribiendo <code>iris</code> en la consola y luego presionando Enter. Este dataframe contiene información correspondiente a cinco tipos de flores, donde las columnas representan los atributos (largo y ancho de sépalo, largo y ancho de pétalo y especie). R Studio trae precargados diferentes data sets, podemos acceder a ellos escribiendo <code>data()</code>.
+<p>Para crear un dataframe utilizaremos la función <code>data.frame()</code>. Una consideración importante: el número de vectores debe ser igual al número de columnas y los todos vectores deben tener el mismo largo (para respetar la cantidad de líneas).</p>
+<pre class="r"><code># vectores sobre primeras seis películas de Harry Potter
+pelicula &lt;- c(&quot;HP1&quot;, &quot;HP2&quot;, &quot;HP3&quot;, &quot;HP4&quot;, &quot;HP5&quot;, &quot;HP6&quot;)
+puntuacion &lt;- c(7.6, 7.4, 7.9, 7.7, 7.5, 7.6)
+posterior_2004 &lt;- c(FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
+
+# crear dataframe
+peliculas_df &lt;- data.frame(pelicula,
+                           puntuacion,
+                           posterior_2004)
+# Para ver las primeras líneas del dataframe
+head(peliculas_df)
+
+# Para acceder a la dimensión del dataframe
+dim(peliculas_df)</code></pre>
+
+<br/>
+<p>Para acceder a más ejemplos de operaciones básicas en R y R Studio, recomendamos consultar la documentación de R:</p>
+<p><a href="https://cran.r-project.org/manuals.html" class="uri">https://cran.r-project.org/manuals.html</a></p>
+<p><a href="https://cran.r-project.org/doc/contrib/R-intro-1.1.0-espanol.1.pdf" class="uri">https://cran.r-project.org/doc/contrib/R-intro-1.1.0-espanol.1.pdf</a></p>
+<p><a href="https://cran.r-project.org/doc/contrib/rdebuts_es.pdf" class="uri">https://cran.r-project.org/doc/contrib/rdebuts_es.pdf</a></p>
+<div id="importar-datos" class="section level3"></div>
+<h3>Importar y exportar datos</h3>
+<p>Ahora exportaremos el dataframe predefinido iris a CSV para poder observar como trabajan algunas funciones. Primero cargaremos la librería <code>readr</code>, que es más completa y eficiente para leer datos que las funciones básicas de R.</p>
+
+<pre class="r"><code>#Cargamos la librería readr
+
+library(&quot;readr&quot;)
+
+# Exportamos en formato CSV el df iris al archivo &#39;iris.csv&#39;
+
+write_csv(iris, path = &quot;C:/hdcaicyt/R/iris.csv&quot;) 
+
+# ¡Importante! Escribir correctamente la ruta de acceso (si no fue configurada con anterioridad): &#39;path = &quot;./iris.csv&quot;&#39;
+
+# Para leer el contenido de un &#39;csv&#39; usamos 'read_csv()'. Lo guardamos en la variable &#39;iris_importado_csv&#39;:
+
+iris_importado_csv &lt;- read_csv(&quot;./iris.csv&quot;)</code></pre>
+<p>Cuestiones importantes a tener en cuenta de <code>read_csv()</code>:</p>
+<ul>
+<li><p>el parámetro <code>col_names = FALSE</code> permite modificar el coportamiento de read_csv() para que no asuma que la primera fila contiene los nombres de las variables. </p></li>
+<li><p><code>skip</code> es útil para informarle a read_csv() que comience a importar a partir de determinada fila: <code>skip = n</code></p></li>
+<li><p>NA (Not Available) son elementos no disponibles. Es muy importante tener en cuenta la presencia de NA en un dataframe porque puede modificar el comportamiento de las funciones que queramos aplicar.</p></li>
+</ul>
+</div>
+<div id="descargar-datos" class="section level3">
+<h3>Descargar datos de internet</h3>
+<p>Desde RStudio, podemos descargar datos de internet con las mismas funciones utilizadas en el entorno de trabajo, solo modificaremos la ruta de acceso proporcionando la de internet.</p>
+<pre class="r"><code>#cargaremos un *.csv a modo de ejemplo
+
+url&lt;- &quot;https://raw.githubusercontent.com/rominicky/materiales/main/assets/Provincias.csv&quot;
+
+# Este paso se puede obviar, pero si queremos guardarlo en un destino:
+
+destino &lt;- &quot;./provincias.csv&quot;
+
+download.file(url, destino)
+
+provincias &lt;- read_csv(destino)
+
+#Si no deseáramos guardarlo, solo realizaremos este último comando</code></pre>
+
+</div>
+
+<div id="visualizacion-informacion" class="section level3">
+  <h3> Visualización de la información</h3>
+
+  <p>Ahora vamos a profundizar un poco más. Igualmente, no se preocupen si algunos conceptos parecen ser demasiado complejos. En otra materia practicarán un poco más lento. Asimismo, con esta ejercitación sólo trataré de demostrar el poder de R, por ello vamos a utilizar algunas librerías más sofisticadas.</p>
+  <p>Ya vimos en la introducción que son los paquetes, estos conjuntos de programas que maximizan la funcionalidad de R. Ahora cargaremos uno de los paquetes más usados, <code>tidyverse</code>. Esta incluye una gran variadad de funciones, muy requeridas en la ciencia de datos, nos permitirá limpiar y transformar datos en R. El principio básico de un dataframe 'tidy' es que cada columna representa una variable y cada línea, una observación.</p>
+  <p>Si aún no lo hemos instalado, usamos la función <code>install.packages()</code> y le pasamos el nombre del paquete deseado, “tidyverse”, entre comillas.</p>
+  <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+  <p>Luego, activarremos el conjunto de funciones que provee <code>tidyverse</code>, invocando <code>library()</code>:</p>
+  <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+  <p>En este ejercicio usaremos dos de sus funciones: <code>mutate()</code> para modificar valores, y <code>ggplot()</code> para hacer gráficos.</p>
+  <p>Ahora vamos a instalar, si no lo hicimos previamente, a <code>ggplot()</code>, una excelente herramietna para visualizaciones.</p>
+  <p>Veremos las personas en situación de calle en Argentina según los datos del último censo, obtenidos desde <a href="https://mapa.poblaciones.org/map/#/@-34.66543,-58.664245,11z">Poblaciones.org</a>. Desde allí obtuve el archivo <span>.CSV</span> que 
+  </p>
+  <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw">provincias <- read.csv('C:/git/materiales/assets/Provincias.csv') #en Windows si no reconoce las comillas probar las simples</span></code></pre></div>
+  <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw">View(provincias) #para que abra el archivo que cargamos</span></code></pre></div>
+  <p><img src="img/provincias.png" width="1344" /></p>
+  <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw">library(tidyverse) #libreria para manipular datos</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw">provincias <- provincias %>%
+  rename(situacion_calle = Personas.en.situación.de.calle..vía.pública.)</span></code></pre></div>
+  <p><span>%>% pipe</span> es un operador que concatena operaciones, facilitando la lectura y lógica de las funciones. En este caso renombramos una columna del dataframe "provincias" mediante la función <span>rename</span> e indicando primero el nombre que utilizaremos y luego como se menciona la columna a cambiar.</p>
+  <p>Con la librería mencionada podríamos calcular la media de personas en situación de calle por provincia. En el análisis estadístico la <span>media</span> mide la tendencia central del valor típico o promedio en un conjunto de datos; se calcula sumando todos los valores y dividiendo ese valor por el número total de valores en el conjunto. Es decir, que resume la distribución de datos numéricos.</p>
+  <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw"># Calculamos la media de personas en situación de calle por provincia
+media_situacion_calle <- provincias %>%
+  group_by(Nombre.de.provincia) %>% #Agrupamos los datos por la columna Nombre.de.provincia.
+  summarise(media_situacion_calle = mean(situacion_calle, na.rm = TRUE)) #Calculamos la media de la columna situacion_calle por cada provincia agrupada, generamos una nueva columna 'media_situacion_calle'
+</span></code></pre></div>
+
+  <p>Ahora, para realizar una visualización de dichos datos  debemos evocar la función <code>ggplot()</code>, que genera un eje de coordenadas sobre el que pueden agregarse capas. El primer parámetro que asignamos a ggplot() es el dataset a graficar. Para nuestro ejemplo, haremos una visualización sobre las personas en situación de calle por provincias. Asimismo, ¿qué sucede si sólo indicamos <code>ggplot(provincias)</code>? Ejecutar sólo ese código nos devuelve un gráfico vacío, por ello es necesario agregar capas con los datos que queremos graficar. Estas se añaden con un signo <code>+</code>.</p>
+  
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw"># Creamos el gráfico de personas en situación de calle por provincias
+ggplot(provincias, aes(x = reorder(Nombre.de.provincia, situacion_calle), y = situacion_calle)) + #indicamos que datos asignamos a cada eje
+  geom_bar(stat = "identity", na.rm = TRUE) + #el tipo de gráfico que realizaremos, podría 
+  coord_flip() +  # Giramos el gráfico para mayor legibilidad
+  labs(title = "Personas en situaciones de calle por Provincias argentinas", #indicamos las etiquetas
+       x = "Provincias",
+       y = "Cantidad de personas en situación de calle") +
+  theme_light() #indicamos el tema, ggplot tiene 8 temas, el genérico es minimal</span></code></pre></div>
+  
+  <p>En nuestro caso utilizamos <code>geom_bar()</code>, que cuenta las ocurrencias para cada categoría de una variable. Existen muchas funciones de tipo “geom_XXX”, que agregan distintas clases de capas al gráfico: geom_point, geom_polygon, geom_text y muchos, muchos más que iremos viendo más adelante.<a href="#section-fn1" class="footnote-ref" id="section-fnref1"><sup>1</sup></a></p> 
+  <p>Para esta librería cada función “geom_” añade parámetros que le indican qué graficar, cómo (color, tamaño, etc.) y dónde (posición x, posición y del eje). Estos parámetros se incluyen dentro de una función auxiliar, <code>aes()</code>.</p>
+  <p><img src="img/situacion_calle-provincias.png" width="1344" /></p>
+  <p>Realizamos un gráfico similar pero con la <span>media</span></p>
+  <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw"># Graficamos con barras apiladas la media
+ggplot(subset(media_situacion_calle, media_situacion_calle > 0), 
+       aes(x = reorder(Nombre.de.provincia, media_situacion_calle), y = media_situacion_calle, fill = media_situacion_calle)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Valor medio de personas en situación de calle por provincia",
+       x = "Provincia",
+       y = "Valor medio de personas en situación de calle") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none")  # Eliminamos la leyenda</span></code></pre></div>
+<p><img src="img/media-sit-calle-prov.png" width="1344" /></p>
+  <p>Ahora realizaremos un gráfico comparando los datos de problación total del Censo 2022 y las personas en situación de calle por provincias.</p>
+  <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="kw"># Gráfico comparativo
+ggplot(provincias, aes(x = Nombre.de.provincia, y = Población..2022., fill = situacion_calle)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7) +
+  scale_fill_viridis_c() +  # Usaremos una paleta con colores contrastantes
+  labs(title = "Comparación de Población 2022 y personas en situación de calle por provincia",
+       x = "Provincia",
+       y = "Población 2022",
+       fill = "Personas en situación de calle") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotamos a 45º las etiquetas del eje x</span></code></pre></div>
+  <img src="img/poblacion-vs-sit_calle.png" width="1344">
+  <p>En este gráfico hemos modificado el tipo de barras, para ser apiladas, indicandole que el color lo tome según las personas en situación de calle, y para ello modificamos la escala de colores. En labs indicamos con <code>fill = "Personas en situación de calle"</code> el color asociado a la cantidad de personas que viven en la calle por provincias, que se compara con la barra de Población del Censo 2022.</p>
+ 
+  <p>En estas representaciones sólo se demostraron algunas funciones de la librería <code>ggplot</code> y <code>tidyverse</code><a href="#section-fn2" class="footnote-ref" id="section-fnref2"><sup>2</sup></a>, pueden seguir probando variedades modificando parámetros, así como otras variables que graficar, y trabajar con datos.</p>
+  
+  </div>
+  <div id="ejercitacion" class="section level3">
+    <h3>Ejercitación propuesta</h3>
+    <p>Para esta unidad, les propongo realizar un script, que llevará como nombre su identificación, y será subido al repositorio de su grupo (por ejemplo, si fuese mi script se llamaría "romina.R" y lo subiría a mi repo: libro-grupo_1, recuerden la clase anterior). Allí deberán llamar al CSV que utilizamos en este contenido, y hacer algún análisis con Tidyverse, puede ser filtrar, agrupar, resumir, sumarizar datos, o calcular porcentajes, y realizar un gráfico de ello con ggplot.</p>
+  </div>
+  </div>
+  
+  <div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="section-fn1"><p>Puedes encontrar más información sobre visualizaciones y ggplot en
+<a href="https://r-charts.com/es/ranking/grafico-barras-ggplot2/" class="uri">https://r-charts.com/es/ranking/grafico-barras-ggplot2/</a>.<a href="#section-fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="section-fn2"><p>Puedes encontrar más información sobre tidyverse en
+<a href="https://rpubs.com/paraneda/tidyverse" class="uri">https://rpubs.com/paraneda/tidyverse</a> y <a href=" https://www.tidyverse.org/" class="uri"> https://www.tidyverse.org/</a>.<a href="#section-fnref2" class="footnote-back">↩︎</a></p></li>
+</ol></div>
+  <script>
+  
+  // add bootstrap table styles to pandoc tables
+  $(document).ready(function () {
+    $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  });
+  
+  </script>
+  
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
