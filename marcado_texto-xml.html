@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcado de texto y XML</title>
+  <style type="text/css">
+    /* Global styles */
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.42857143;
+      color: #333;
+      background-color: #fff;
+      margin: 2cm 1cm;
+      /* Simplified margin shorthand */
+    }
+
+    /* Code styles */
+    code {
+      font-family: monospace, monospace;
+      font-size: 1em;
+      padding: 2px 4px;
+      font-size: 90%;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 4px;
+    }
+
+    /* Preformatted text styles */
+    p.francesa {
+    text-indent: -30px;
+    position: absolute;
+    padding-left: 40px
+    }
+    
+    pre {
+      display: block;
+      padding: 9.5px;
+      margin: 0 0 10px;
+      font-size: 13px;
+      line-height: 1.42857143;
+      color: #333;
+      word-break: break-all;
+      word-wrap: break-word;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    pre code {
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+      white-space: pre-wrap;
+      background-color: transparent;
+      border-radius: 0;
+    }
+
+    blockquote {
+      background-color: #716f6f;
+      /* Cambia este valor al color que desees */
+      padding: 10px;
+      font-family: Courier New;
+      font-size: 10px;
+      border-left: 5px solid #ccc;
+      /* Esto agrega una línea al costado, común en blockquote */
+    }
+
+    /* Scrollable preformatted text styles */
+    .pre-scrollable {
+      max-height: 340px;
+      overflow-y: scroll;
+    }
+
+    /* Container styles */
+    .main-container {
+      max-width: 940px;
+      margin: 0 auto;
+      /* Simplified margin shorthand */
+    }
+
+    .container-fluid {
+      padding: 0 15px;
+    }
+
+    /* Image styles */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romina De León</title>
+  <!-- CSS: Inside head tag -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- Devicon: Programming languages icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <style>
+    I {
+      font-size: 3em;
+    }
+  </style>
+    <!-- Centrar imàgenes -->
+   <style>
+     .image-container {
+       text-align: center;
+     }
+   </style>
+  <!-- fonticon icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    .social-icon {
+      font-size: 24px;
+      /* Tamaño de los iconos */
+    }
+
+    .social-name {
+      font-size: 16px;
+      /* Tamaño de los nombres */
+    }
+
+    .footnote {
+      margin: 0;
+      /* elimina el margen superior e inferior */
+      padding: 0;
+      /* elimina el relleno superior e inferior */
+    }
+
+    .footnote {
+      font-size: 1em;
+      font-family: inherit;
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg bg-dark ">
+    <div class="container-fluid">
+      <div class="mx-4">
+        <a class="navbar-brand" href="materiales.html">Materiales</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="descargas.html">Descargas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid main-container">
+    <h1 class="title toc-ignore">Marcado de textos y XML</h1>
+    <h4 class="author">Romina De León</h4>
+    <h5><a href="mailto:romideleon@gmail.com" class="email">romideleon@gmail.com</a></h5>
+  </div>
+  <div class="container-fluid main-container">
+    <nav id="index">
+      <h2>Índice</h2>
+      <ul>
+        <li><a href="#section-id1">¿Qué son los lenguajes de marcado?</a></li>
+        <li><a href="#section-id2">¿Qué es XML?</a></li>
+        <li><a href="#section-id3">Estándar de marcado, TEI-XML</a></li>
+        <li><a href="#section-id4">Ejercitación</a></li>
+        <!-- más títulos h1 -->
+      </ul>
+    </nav>
+  </div>
+  <div class="container-fluid main-container">
+    <div id="#section-id2" class="section level3">
+      <h1>¿Qué son los lenguajes de marcado?</h1>
+    </div>
+    <h4>Recorrido en el marcado</h4>
+    <p>En 1967 <em>W. W. Tunnicliffe</em> expuso por primera vez los conceptos de los lenguajes de marcado. Estos tienen
+      orígenes en la época de la invención de la imprenta, debido a las instrucciones necesarias que se añadían en los
+      márgenes de los manuscritos para su impresión, así como las indicaciones sobre tipo de letra, estilo, tamaño,
+      corrección de errores.</p>
+    <p>Obviamente con la aparición de la informática, estas actividades fueron trasladadas a dicha área, que facilitaron
+      la automatización y estandarización.</p>
+    <p>Tunnicliffe presentó como novedad la separación entre presentación y estructura del texto, <em>codificación
+        genérica</em> (GenCode). Sin embargo, la piedra angular del <em>marcado</em> fue el estandar <a
+        href="https://www.iso.org/" target="_blank">SGML (Standard Generalized Markup Language)</a>, elaborada por un
+      comité dirigido por <strong>Charles Goldfarb</strong>, investigador de la compañía IBM. Desde ese momento, se han
+      establecido distintos estándares de publicación, como ser <em><a href="https://www.tug.org/svn/texlive/"
+          target="_blank">TeX</a></em>, <em><a href="https://www.latex-project.org/" target="_blank">LaTeX</a></em>, y
+      el poputal <em><a href="https://www.w3.org/html/" target="_blank">HTML</a></em>.</p>
+    <p>HTML es el tipo de documentos más empleado en el mundo, debido a su sencillez, sin embargo durante la década del
+      90, se produjeron enorme cantidades de sitios web, sin embargo estos se encontraban mal estructurados, no
+      respetaban estándares. La respuesta a estos problemas se produjo con el surgimiento del <a
+        href="http://www.w3.org/XML" target="_blank">XML</a> (eXtensible Markup Language).</p>
+<div class="image-container">
+  <img src="https://xml.coverpages.org/Jelliffe-schema-family-tree3-20061130.jpg" style="width: 100%;"></img>
+</div>
+    <h5>Ahora ¿qué son los lenguajes de marcado?</h5>
+    <p>Los lenguajes de marcado son una manera de codificar documentos que incorporan etiquetas o marcas contenedoras de
+      información adicional, referida a la estructura o presentación de los textos. <em>No son lenguajes de
+        programación</em>, puesto que los primeros no tienen funciones o variables.</p>
+    <p>Se pueden diferenciar en tres clases de lenguaje de marcado, asimismo pueden combinarse en un mismo documento. Estas clases son <strong>marcado de presentación</strong> (que indica el formato de los textos, el maquetado de los documentos para su presentación de lectura), <strong>de procedimientos</strong> (útil tanto para la presentación como para la edición del texto) y <strong>descriptivos</strong> (Coombs, Renear y De Rose, 1987).</p>
+    <p>Estos últimos, también se denominan <strong>semánticos</strong>, permiten describir fragmentos de textos utilizando etiquetas, pudiendo tener cualquier formato de salida. Incluso, mayormente la transformación y presentación para publicar en un sitio web se relega a una etapa posterior. En este grupo encontramos <strong>SGML</strong> y <strong>XML</strong>.</p>
+    <div class="image-container"><img
+        src="data:image/png;base64,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"
+        style="width: 50%;"></div>
+  </div>
+  <h4>Ejemplos de tipos de lenguajes</h4>
+  <ul>
+    <li>De presentación,
+      <ul>
+        <li> RTF, Rich Text Format - Formato de Texto Enriquecido:
+          <blockquote>
+            {\rtf1\ansi\deff0
+            {\fonttbl{\f0\fswiss Helvetica;}}
+            \f0\fs24
+            Este es un \b texto en negrita\b0, y este es un texto \i en cursiva\i0.
+            Este texto está en \cf1 rojo\cf0.
+            }
+          </blockquote>
+        </li>
+        <li>TeX,
+          <blockquote>\documentclass{article}
+            \begin{document}
+            Este es un texto normal, con una palabra en \textbf{negrita} y otra en \textit{cursiva}.
+            Esta es una ecuación matemática:
+            \[
+            a = v \cdot t^2
+            \]
+            \end{document}</blockquote>
+        </li>
+        <li>Wikitexto, para las páginas tipo Wikitexto
+          <blockquote>
+            ''Este es un texto en cursiva''
+          </blockquote>
+        </li>
+      </ul>
+    </li>
+    <li>De procedimientos,
+      <ul>
+        <li>HTML
+          <div class="image-container"><img src="https://www.seobility.net/es/wiki/images/7/7f/Lenguaje_de_marcado.png" style="width: 75%;">
+          </div>
+        </li>
+        <li>LaTeX
+          <blockquote>
+            \documentclass{article}
+            \begin{document}
+            \title{Un Documento en LaTeX}
+            \author{Autor}
+            \date{\today}
+            \maketitle
+
+            Este es un \textbf{documento en LaTeX} con fórmulas matemáticas:
+            \[
+            a^2 + b^2 = c^2
+            \]
+            \end{document}
+          </blockquote>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="container-fluid main-container">
+    <div id="#section-id2" class="section level3">
+      <h1>¿Qués es XML?</h1>
+    </div>
+    <div>
+      <div class="image-container"><img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_kCAcW1lb3c12yDISvMAOvE3P_hz6N7veg&s"
+          alt="Logo de XML" style="width: 25%;" />
+      </div>
+      <p>XML (eXtensible Markup Language), lenguaje de marcado extensible, es un metalenguaje de marcado utilizado para estructurar datos de manera que sean legibles tanto para humanos como para máquinas. A diferencia de HTML, XML no tiene etiquetas predefinidas, por ello permite crear etiquetas personalizadas que definen la estructura y el contenido de los datos, desde las especificaciones creadas por <a href="https://www.w3.org/XML/" target="_blank">W3C</a>. Proviene, como se mencionó, del lenguaje SGML y facilita la definición de la gramática de lenguajes para estructurar documentos de grandes tamaños. XML da soporte a bases de datos, generando intercomunicación e integración de información.</p>
+
+      <h4>Principales características de XML</h4>
+      <ul>
+        <li>Extensible, porque sus etiquetas no son fijas, permitiendo definir etiquetas personalizadas.</li>
+        <li>Jerárquico, ya que los datos se organizan en una estructura de árbol (arbórea), es decir los elementos pueden contener subelementos.</li>
+        <li>Legible por humanos, posee un formato de texto claro que facilita la lectura y la edición manual.</li>
+        <li>Interoperable, sus datos son intercambiables entre diferentes plataformas y sistemas.</li>
+      </ul>
+<p>Por estas características, existen muchos lenguajes basados en XML, como ser  <a href="https://developer.mozilla.org/es/docs/Glossary/XHTML" target="_blank">XHTML</a>, MathML, SVG, XUL, XBL, RSS, y RDF. También puedes crear uno propio.</p>
+
+<h4>Estructura básica de archivos XML</h4>
+<div class="image-container">
+  <img src="https://raw.githubusercontent.com/rominicky/materiales/37afbd30d8433e8d1fe457fc2178a5218e737c5e/img/xml-estructura.png" style="width: 50;">
+</div>
+<p>La estructura de un archivo XML se compone de una serie de etiquetas. Para que un documento de este tipo sea correcto debe estar bien formado, es decir, cumplir con las reglas de sintaxis, y validado, acorde a las reglas de un lenguaje específico. A continuación encontrarán un ejemplo simple:</p>
+<blockquote>
+&lt;<span style="color: blue;">xml</span> <span style="color: aqua;">version</span>=<span style="color: coral;">"1.0"</span> <span style="color: aqua;">encoding</span>=<span style="color: coral;">"UTF-8"</span>?&gt;<br>
+  &lt;libro&gt;
+    &lt;titulo&gt;Don Quijote de la Mancha&lt;/titulo&gt;
+    &lt;autor&gt;Miguel de Cervantes&lt;/autor&gt;
+    &lt;año_publicacion&gt;1605&lt;/año_publicacion&gt;
+    &lt;editorial&gt;España&lt;/editorial&gt;<br>
+  &lt;/libro&gt;
+</blockquote>
+<p>Un documento mal formado sería si tiene una etiqueta de apertura y no tiene una de cierre, ni tampoco se cierra a sí misma.</p>
+<blockquote>
+&lt;message&gt;
+  &lt;warning&gt;
+      Hola, mundo
+<br>
+  <span style="color: rgb(13, 157, 13);">&lt;!--Este tipo de anotación es para añadir comentarios, y en este encuentran que el error de este XML es que no está cerrada la etiqueta "warning" de la siguiente forma &lt;/warning&gt; --&gt;</span>
+
+&lt;/message&gt;
+</blockquote>
+<p>Para ser válido, un documento XML necesita cumplir ciertas reglas de semántica que son generalmente definidas en un esquema XML o en una Definición de Tipo de Documento (doctype, DTD). Un documento que contiene una etiqueta no definida es inválido. Por ejemplo, si nunca definimos la etiqueta &lt;/warning&gt;, el documento ejemplo no será válido.</p>    
+<p>Veamos los elementos básicos de un archivo XML:</p>
+<ul>
+<li>Declaración XML, esta se encuentra en la primera línea, por ejemplo: 
+<blockquote>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</blockquote> 
+Indica que estamos ante un archivo XML, además se especifica la versión y la codificación de caracteres.</li>
+<li>Etiquetas, se utilizan para definir elementos (como ser &lt;libro&gt;, &lt;titulo&gt;, &lt;autor&gt;, etc). Recordar que para que esté bien formado el XML, cada elemento debe tener una etiqueta de apertura y otra de cierre (ejemplo: &lt;titulo&gt; y &lt;/titulo&gt;).</li>
+<li>Contenido, es lo que encontramos dentro de las etiquetas, el valor de cada elemento. Como en nuestro ejemplo: <em>Don Quijote de la Mancha</em> entre las etiquetas &lt;titulo&gt; y &lt;/titulo&gt;.</li>
+<li>Estructura jerárquica, es decir que los elementos pueden contener otros elementos. En nuestro ejemplo, el elemento &lt;libro&gt; contiene elementos como &lt;titulo&gt;, &lt;autor&gt;, etc.</li>
+</ul>
+<h4>Sintaxis en archivos XML</h4>
+<p>Para que un documento se encuentre bien formado, debe cumplir con las siguientes reglas básicas:</p>
+<ul>
+  <li>Etiqueta de cierre obligatoria</li>
+  <li>Sensibilidad a mayúsculas y minúsculas, es decir, &lt;Nombre&gt; y &lt;nombre&gt; son diferentes.</li>
+<li>Raíz única, debe ser la que contenga todos los demás elementos en un documento XML; en el ejemplo anterior &lt;libro&gt; es el elemento raíz.</li>
+<li>Atributos, proporcionan información adicional de los elementos. Estos siempre se escriben dentro de las etiquetas de apertura:
+&lt;libro <span style="color:rgb(248, 113, 113);">categoria="novela"</span>&gt;
+  &lt;titulo&gt;Don Quijote de la Mancha&lt;/titulo&gt;
+&lt;/libro&gt;
+<br>Se observa que la <em>categoria="novela"</em> es un atributo del elemento &lt;libro&gt;.</li>
+</ul>
+
+<div class="container-fluid main-container">
+  <div id="#section-id3" class="section level3">
+    <h1>Estándar de marcado, TEI-XML</h1>
+  </div>
+  <div>
+    <div class="image-container"><img
+        src="https://tei-c.org/img/emblem_color_dark.png"
+        alt="Logo de XML" style="width: 25%;" />
+    </div>
+<p>En las unidades anteriores, hemos trabajado las diferencias existentes entre un texto digitalizado y uno digital. El primero ha sufrido un proceso de tranformación de formato físico, como ser un libro o un documento, a un formato digital mediante escaneo o fotografía, siendo almacenado generalmente en formato PDF con imágenes que contienen el texto. Mientras que, el texto digital es creado directamente en un dispositivo electrónico por medio de procesadores de textos; es legible tanto por humanos como por máquinas. Otra diferencia importante es que el texto digital permite la búsqueda, edición y reemplazo de caracteres. Asimismo, cabe señalar, que en PDFs de textos digitalizados, mediante un proceso de <a href="https://es.wikipedia.org/wiki/Reconocimiento_%C3%B3ptico_de_caracteres" target="_blank">Reconocimiento Óptico de Caracteres (OCR, siglas en inglés)</a>, pueden reconocer los textos contenidos en las imágenes digitalizadas.</p>
+<p>Los tipos de textos digitales son diversos: desde documentos en Google Docs, publicaciones en redes sociales o blogs, y e-books, hasta su formas más sencilla, el texto plano. Ya hemos trabajado con ellos; son los documentos que tienen extensión <strong>*.txt</strong>. Estos contienen solo caracteres y espacios, sin ningún tipo de añadido en cuanto al formato. Los tipos de textos digitales mencionados son enriquecidos con información adicional, como estructura y forma, mediante <a href="#section-id1">lenguajes de marcado</a>, que hemos presentado en esta unidad.</p>
+<p>Hemos presentado los lenguajes de marcado, y a <a href="#section-id2">XML</a> en particular. Sin embargo, en esta unidad profundizaremos en <strong>XML-TEI</strong>, un estándar de marcado basado en el lenguaje XML. La TEI o <a href="https://tei-c.org/" target="_blank">Text Encoding Initiative</a> es el consorcio que surgió a fines de los 80s, y desarrolló en 1994 este estándar, y lo continúa manteniendo y actualizando. Las <a href="https://tei-c.org/release/doc/tei-p5-doc/es/html/index.html" target="_blank">Guidelines TEI</a> son utilizadas por bibliotecas, museos, editores y académicos para presentar textos con diferentes fines, como ser investigación, enseñanza, preservación en línea, entre otros. Estas se encuentran traducidas en 8 idiomas incluido el español.</p>
+<div class="image-container">
+  <img src="https://bid.ub.edu/wp-content/uploads/2016/11/Alcaraz1bg.jpg" style="width: 75%;" alt="Ejemplo comentado del marcado de un pequeño fragmento de la obra de Oscar Wilde, The Importance of Being Earnest.">Ejemplo de codificación de un texto dramático (Alcaraz Martínez y Vázquez Puig, 2016).</img>
+</div>
+<br><h4>¿Qué es TEI?<a href="#section-fn1" class="footnote-ref" id="section-fnref1"><sup>1</sup></a></h4>
+<p>Las <em>TEI Guidelines for electronic text encoding and interchange</em> son pautas que definen y documentan el estándar TEI. Estas directrices se organizan en diferentes capítulos en los cuales se aborda el sistema de clases y de atributos, y los diferentes módulos que conforman el esquema<a href="#section-fn2" class="footnote-ref" id="section-fnref2"><sup>2</sup></a>. Ha sido creado bajo la premisa de generar un lenguaje flexible y extensible, y que pudiese representar cualquier texto, así como adaptarse a las necesidades de cada usuario. Esto implica que podremos estructurar los textos en lo formal como en lo semántico, permitiéndonos que sean procesados, comprendidos y analizados por las máquinas como por humanos.</p>
+<p>Como hemos mencionado, TEI es un lenguaje de marcado del tipo descriptivo, por ello se centra en el contenido semántico, y no en su presentación, como es el caso de HTML. Es decir, no se indicará si una palabra se encuentra en negrita o cursiva, sino que tipo será, por ejemplo un título. Por otra parte, un XML-TEI puede ser fácilmente transformado a distintos formatos, como DOC, ePub, HTML, PDF, etc. Sin embargo, no siempre se puede al revés. Por ende, la separación en un texto de la forma o su presentación hace más sencilla la reutilización de este, pues no se halla limitado a formatos.</p>
+<p>Volviendo a las directrices, núcleo de la TEI, brindan manuales de uso y normativas para buenas prácticas. Estas incluyen <a href="https://tei-c.org/release/doc/tei-p5-doc/es/html/ST.html#STIN" target="_blank">TEI esquemas (schemas)</a>, <a href="https://github.com/TEIC/TEI" target="_blank">código de TEI</a>; esta documentación es actualizada periodicamente y se encuentra disponible en acceso abierto. Además proponen aislar el marcado en etiquetas de las características textuales, pudiendo ser estructurales (capítulos de libro, secciones, apartados, párrafos, versos, etc.), físicas (páginas, columnas en un manuscrito, etc.), como semánticas o conceptuales (nombres de personas, lugares, palabras clave, etc.) <pre>Recuerden lo visto en la unidad anterior en Recogito</pre>. Asimismo, siempre al abrir una etiqueta recuerden que debe tener un cierre, para que el XML-TEI esté bien formado y sea válido.</p>
+<p>El uso de TEI tiene varias ventajas, como que no depende de ningún software o programa, además de ser gratuito e independiente, por ello se puede utilizar sin ninguna variación en cualquier sistema operativo. Además como ha sido diseñado por y para la comunidad científica, permite la reutilización de manera sencilla del mismo material, en diferentes formatos, contextos y usuarios.</p>
+A continuación comenzaremos a trabajar un archivo XML-TEI, que les compartiré en el campus, para poder iniciar la incorporación de conceptos, reglas y nociones fundamentales en este lenguaje de marcado.
+Asimismo, el paso que sigue previamente es la instalación de un editor de código, <strong>Visual Studio Code</strong>, creo que la mayoría ya lo tienen instalado. En caso contrario podrán encontrar información sobre dicho proceso <a href="https://code.visualstudio.com/docs/setup/setup-overview" target="_blank">aquí</a>.
+</div>
+</div>
+
+<div id="bibliografía-recomendada" class="section level2">
+<h2>Bibliografía recomendada:</h2>
+<p class="francesa">
+Coombs, J. H., Renear, A. H., & DeRose, S. J. (1987). Markup systems and the future of scholarly text processing. <em>Communications Of The ACM</em>, <em>30</em>(11), 933-947. <a href="https://doi.org/10.1145/32206.32209" target="_blank">https://doi.org/10.1145/32206.32209</a>
+</p>
+<p class="francesa">
+De la Rosa, A., & Senso, J. A. (1999). XML como medio de normalización y desarrollo documental. <em>Revista Española de Documentación Científica</em>, <em>22</em>(4), 488-504. <a href="https://doi.org/10.3989/redc.1999.v22.i4.346" target="_blank">https://doi.org/10.3989/redc.1999.v22.i4.346</a></p>
+<p class="francesa">Linares-Sánchez, J. J., Sánchez-Cuadrado, S., & Morato, J. (2022). Datos enlazados para el análisis de la literatura grecolatina. <em>Revista Española De Documentación Científica</em>, <em>45</em>(1). <a href="https://doi.org/10.3989/redc.2022.1.1842" target="_blank">https://doi.org/10.3989/redc.2022.1.1842</a></p>
+<p>Alcaraz Martínez, R., & Vázquez Puig, E. (2016). TEI: un estándar para codificar textos en el ámbito de las humanidades digitales. <em>BID</em>. <a href="https://bid.ub.edu/es/37/alcaraz.htm" target="_blank">https://bid.ub.edu/es/37/alcaraz.htm</a></p>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="section-fn1"><p>Debemos tener en cuenta, que el término TEI será utilizado indistintamente para referirnos a la <em>Text Encoding Initiative</em> o el <em>Consorcio TEI</em>, las <em>TEI guidelines</em> así como al mismo lenguaje. Utilizaremos la forma femenina para referirnos a la Iniciativa, y el <em>estándar TEI</em> para mencionar al lenguaje.<a href="#section-fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="section-fn2"><p>Existen varios tutoriales sobre XML-TEI, recomiendo: <a href="https://tthub.io/aprende/tutorial/introduccion-text-encoding-initiative" target="_blank">TTHub</a>, <a href="https://bid.ub.edu/es/37/alcaraz.htm" target="_blank">TEI: un estándar para codificar textos en el ámbito de las humanidades digitales</a> y <a href="https://carpentries-incubator.github.io/tei-xml/aio/index.html" target="_blank">Introduction to TEI</a>.<a href="#section-fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>                                                              
+</div>
+
+<script>
+
+      // add bootstrap table styles to pandoc tables
+      function bootstrapStylePandocTables() {
+        $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+      }
+      $(document).ready(function () {
+        bootstrapStylePandocTables();
+      });
+
+      $(document).ready(function () {
+        $('.knitsql-table').addClass('kable-table');
+        var container = $('.kable-table');
+        container.each(function () {
+
+          // move the caption out of the table
+          var table = $(this).children('table');
+          var caption = table.children('caption').detach();
+          caption.insertBefore($(this)).css('display', 'inherit');
+        });
+      });
+
+    </script>
+
+    <!-- tabsets -->
+
+    <script>
+      $(document).ready(function () {
+        window.buildTabsets("section-TOC");
+      });
+
+      $(document).ready(function () {
+        $('.tabset-dropdown > .nav-tabs > li').click(function () {
+          $(this).parent().toggleClass('nav-tabs-open');
+        });
+      });
+    </script>
+
+    <!-- code folding -->
+    <script>
+      $(document).ready(function () {
+        window.initializeSourceEmbed("git_github.Rmd");
+        window.initializeCodeFolding("show" === "show");
+      });
+    </script>
+
+
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+    <script>
+      (function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+        document.getElementsByTagName("head")[0].appendChild(script);
+      })();
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
