@@ -177,25 +177,24 @@ Asunción, &lt;<span style="color: dodgerblue;">date</span>&gt;2 de julio de 155
 <li>Encabezado, <strong>teiHeader</strong>, se debe cerrar la etiqueta</li>
 <li>Cuerpo del texto, <strong>text</strong>, debe tener cierre de etiqueta</li></ul>
 <p>
-Veamos algunos detalles de cada uno. La <strong>primera línea</strong> donde se indica la <strong>declaración XML</strong> no debe ir precedido por ningún otro elemento ni comentarios, así como tampoco por espacio en blanco. Tiene como función crucial, indicar el tipo de documento, la versión de estándar XML y la codificación utilizada.
+Veamos algunos detalles de cada uno. La <strong>primera línea</strong> donde se indica la <strong>declaración XML</strong> no debe ir precedido por ningún otro elemento ni comentarios, así como tampoco por espacio en blanco. Tiene como función crucial indicar el tipo de documento, la versión de estándar XML y la codificación utilizada, cada uno de estos debe ser respetado y señalado correctamente.
 </p>
-<p>Luego sigue la <strong>declaración de modelo XML</strong>, en esta línea indicaremos el esquema RelaxNG, </p>
+<p>Luego sigue la <strong>declaración de modelo XML</strong>, en esta línea indicaremos el esquema RelaxNG. Este especificará el conjunto de reglas que sigue nuestro documento para ser válido. Esto declara los elementos obligatorios, los optativos, atributos que pueden agregarse, etc. La opción que utilizaramos, RelaxNG es altamente recomendada y utilizada por la TEI. Asimismo, este esquema puede personalizarse, esta posibildad se debe a la forma modular del marcado TEI, a la que nos hemos referido en <a href="marcado_texto-xml.html" target="_blank">¿Qué es TEI?</a><a href="#section-fn1" class="footnote-ref"><sup>1</sup></a>. </p>
   </div>
 
   <div class="container-fluid main-container">
     <div id="section-id3" class="section level3">
       <h2>Ejemplo de marcado</h2>
-      <h4>¿Qué?<a href="#section-fn1" class="footnote-ref"><sup>1</sup></a></h4>
+      <h4>¿Qué?</h4>
     </div>
   </div>
-
-  <div class="container-fluid main-container"></div>
+  <div class="container-fluid main-container">
     <div id="section-id4" class="section level3">
       <h2>Extensiones de VS Code</h2>
-      <h4>¿Qué?<a href="#section-fn1" class="footnote-ref"><sup>1</sup></a></h4>
+      <h4>¿Qué?</h4>
     </div>
-    <p></p>
-</div>
+    <p>Las </p>
+  </div>
 <div class="container-fluid main-container">
   <div id="section-id5" class="section level3">
     <h2>Ejercitación</h2>
@@ -216,7 +215,7 @@ Veamos algunos detalles de cada uno. La <strong>primera línea</strong> donde se
     <div class="footnotes footnotes-end-of-document">
       <hr />
       <ol>
-        <li id="section-fn1"><p>Debemos tener en cuenta que el término TEI será utilizado indistintamente para referirnos a la <em>Text Encoding Initiative</em> como organización y como lenguaje de marcado. <a href="#section-id3" class="footnote-backref">↩</a></p></li>
+        <li id="section-fn1"><p>Puede acceder a diversos esquemas personalizados desde <a href="https://tei-c.org/guidelines/customization/" target="_blank">https://tei-c.org/guidelines/customization/</a>. En el siguiente apartado trabajaremos sobre las posibilidades de diseñar nuestro propio RelaxNG.<a href="#section-id3" class="footnote-backref">↩</a></p></li>
       </ol>
     </div>
   </div>
