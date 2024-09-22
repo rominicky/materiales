@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marcado de texto y XML</title>
+  <title>Marcado en XML-TEI</title>
   <style type="text/css">
     /* Global styles */
     body {
@@ -59,12 +59,12 @@
 
     blockquote {
       background-color: #b3aeae;
-      /* Cambia este valor al color que desees */
+      /* color */
       padding: 10px;
       font-family: Courier New;
       font-size: 12px;
       border-left: 5px solid #ccc;
-      /* Esto agrega una línea al costado, común en blockquote */
+      /* línea al costado, común en blockquote */
     }
 
     /* Scrollable preformatted text styles */
@@ -163,7 +163,7 @@
     </div>
   </nav>
   <div class="container-fluid main-container">
-    <h1 class="title toc-ignore">Marcado de textos y XML</h1>
+    <h1 class="title toc-ignore">Marcado XML-TEI</h1>
     <h4 class="author">Romina De León</h4>
     <h5><a href="mailto:romideleon@gmail.com" class="email">romideleon@gmail.com</a></h5>
   </div>
@@ -171,9 +171,9 @@
     <nav id="index">
       <h2>Índice</h2>
       <ul>
-        <li><a href="#section-id1">¿Qué son los lenguajes de marcado?</a></li>
-        <li><a href="#section-id2">¿Qué es XML?</a></li>
-        <li><a href="#section-id3">Estándar de marcado, TEI-XML</a></li>
+        <li><a href="#section-id1">Conceptos generales de documentos TEI</a></li>
+        <li><a href="#section-id2">Estructura de un XML-TEI</a></li>
+        <li><a href="#section-id3">Ejemplo de marcado</a></li>
         <li><a href="#section-id4">Ejercitación</a></li>
         <!-- más títulos h1 -->
       </ul>
@@ -181,34 +181,12 @@
   </div>
   <div class="container-fluid main-container">
     <div id="#section-id1" class="section level3">
-      <h1>¿Qué son los lenguajes de marcado?</h1>
+      <h2>Conceptos generales de documentos TEI</h2>
     </div>
-    <h4>Recorrido en el marcado</h4>
-    <p>En 1967 <em>W. W. Tunnicliffe</em> expuso por primera vez los conceptos de los lenguajes de marcado. Estos tienen
-      orígenes en la época de la invención de la imprenta, debido a las instrucciones necesarias que se añadían en los
-      márgenes de los manuscritos para su impresión, así como las indicaciones sobre tipo de letra, estilo, tamaño,
-      corrección de errores.</p>
-    <p>Obviamente con la aparición de la informática, estas actividades fueron trasladadas a dicha área, que facilitaron
-      la automatización y estandarización.</p>
-    <p>Tunnicliffe presentó como novedad la separación entre presentación y estructura del texto, <em>codificación
-        genérica</em> (GenCode). Sin embargo, la piedra angular del <em>marcado</em> fue el estandar <a
-        href="https://www.iso.org/" target="_blank">SGML (Standard Generalized Markup Language)</a>, elaborada por un
-      comité dirigido por <strong>Charles Goldfarb</strong>, investigador de la compañía IBM. Desde ese momento, se han
-      establecido distintos estándares de publicación, como ser <em><a href="https://www.tug.org/svn/texlive/"
-          target="_blank">TeX</a></em>, <em><a href="https://www.latex-project.org/" target="_blank">LaTeX</a></em>, y
-      el poputal <em><a href="https://www.w3.org/html/" target="_blank">HTML</a></em>.</p>
-    <p>HTML es el tipo de documentos más empleado en el mundo, debido a su sencillez, sin embargo durante la década del
-      90, se produjeron enorme cantidades de sitios web, sin embargo estos se encontraban mal estructurados, no
-      respetaban estándares. La respuesta a estos problemas se produjo con el surgimiento del <a
-        href="http://www.w3.org/XML" target="_blank">XML</a> (eXtensible Markup Language).</p>
-<div class="image-container">
+    <p></p>
+    <div class="image-container">
   <img src="https://xml.coverpages.org/Jelliffe-schema-family-tree3-20061130.jpg" style="width: 100%;"></img>
 </div><br>
-    <h5>Ahora ¿qué son los lenguajes de marcado?</h5>
-    <p>Los lenguajes de marcado son una manera de codificar documentos que incorporan etiquetas o marcas contenedoras de
-      información adicional, referida a la estructura o presentación de los textos. <em>No son lenguajes de
-        programación</em>, puesto que los primeros no tienen funciones o variables.</p>
-    <p>Se pueden diferenciar en tres clases de lenguaje de marcado, asimismo pueden combinarse en un mismo documento. Estas clases son <strong>marcado de presentación</strong> (que indica el formato de los textos, el maquetado de los documentos para su presentación de lectura), <strong>de procedimientos</strong> (útil tanto para la presentación como para la edición del texto) y <strong>descriptivos</strong> (Coombs, Renear y De Rose, 1987).</p>
     <p>Estos últimos, también se denominan <strong>semánticos</strong>, permiten describir fragmentos de textos utilizando etiquetas, pudiendo tener cualquier formato de salida. Incluso, mayormente la transformación y presentación para publicar en un sitio web se relega a una etapa posterior. En este grupo encontramos <strong>SGML</strong> y <strong>XML</strong>.</p>
     <div class="image-container"><img
         src="data:image/png;base64,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"
@@ -273,7 +251,7 @@
   </ul>
   <div class="container-fluid main-container">
     <div id="#section-id2" class="section level3">
-      <h1>¿Qués es XML?</h1>
+      <h2>Estructura de un XML-TEI</h2>
     </div>
     <div>
       <div class="image-container"><img
@@ -340,7 +318,7 @@ Indica que estamos ante un archivo XML, además se especifica la versión y la c
 
 <div class="container-fluid main-container">
   <div id="#section-id3" class="section level3">
-    <h1>Estándar de marcado, TEI-XML</h1>
+    <h2>Ejemplo de marcado</h2>
   </div>
   <div>
     <div class="image-container"><img
@@ -359,14 +337,8 @@ Indica que estamos ante un archivo XML, además se especifica la versión y la c
 <p>Como hemos mencionado, TEI es un lenguaje de marcado del tipo descriptivo, por ello se centra en el contenido semántico, y no en su presentación, como es el caso de HTML. Es decir, no se indicará si una palabra se encuentra en negrita o cursiva, sino que tipo será, por ejemplo un título. Por otra parte, un XML-TEI puede ser fácilmente transformado a distintos formatos, como DOC, ePub, HTML, PDF, etc. Sin embargo, no siempre se puede al revés. Por ende, la separación en un texto de la forma o su presentación hace más sencilla la reutilización de este, pues no se halla limitado a formatos.</p>
 <p>Volviendo a las directrices, núcleo de la TEI, brindan manuales de uso y normativas para buenas prácticas. Estas incluyen <a href="https://tei-c.org/release/doc/tei-p5-doc/es/html/ST.html#STIN" target="_blank">TEI esquemas (schemas)</a>, <a href="https://github.com/TEIC/TEI" target="_blank">código de TEI</a>; esta documentación es actualizada periodicamente y se encuentra disponible en acceso abierto. Además proponen aislar el marcado en etiquetas de las características textuales, pudiendo ser estructurales (capítulos de libro, secciones, apartados, párrafos, versos, etc.), físicas (páginas, columnas en un manuscrito, etc.), como semánticas o conceptuales (nombres de personas, lugares, palabras clave, etc.) <em>Recuerden lo visto en la unidad anterior en Recogito</em>. Asimismo, siempre al abrir una etiqueta recuerden que debe tener un cierre, para que el XML-TEI esté bien formado y sea válido.</p>
 <p>El uso de TEI tiene varias ventajas, como que no depende de ningún software o programa, además de ser gratuito e independiente, por ello se puede utilizar sin ninguna variación en cualquier sistema operativo. Además como ha sido diseñado por y para la comunidad científica, permite la reutilización de manera sencilla del mismo material, en diferentes formatos, contextos y usuarios.</p>
-<div class="container-fluid main-container"></div>
-  <div id="#section-id4" class="section level3">
-    <h1>Ejercitación</h1>
-  </div>
-<p>A continuación comenzaremos a trabajar un archivo XML-TEI, que les compartiré en el campus, para poder iniciar la incorporación de conceptos, reglas y nociones fundamentales en este lenguaje de marcado, que encontrarán en el <a href="xml-tei.html" target="_blank">siguiente apartado</a>.</p>
-<p>Asimismo, el paso que sigue, antes de empezar a trabajar, es la instalación de un editor de código. Mi recomendación es <a href="https://code.visualstudio.com/Download" target="_blank">Visual Studio Code</a>, creo que la mayoría ya lo tienen instalado. En caso contrario podrán encontrar como realizar la instalación <a href="https://code.visualstudio.com/docs/setup/setup-overview" target="_blank">aquí</a>. Usaremos <em>VS Code</em> porque es gratuito, con una enorme cantidad de funciones adicionales, la más interesante para nuestro propósito es la posibilidad de instalar extensiones con funciones adicionales, que pueden ser creadas por los usuarios. Dentro de estas encontraremos algunas que han sido específicamente desarrolladas para trabajar con documentos XML-TEI. Por lo anterior recomiendo que instalen la extensión <a href="https://marketplace.visualstudio.com/items?itemName=raffazizzi.sxml">Scholarly XML</a>, que próximamente nos será muy útil. Para ello les comparto un vídeo con los pasos para instalar extensiones.</p>
-<p>Finalmente, les comparto algunos <em>atajos o shortcuts</em> de VS Code, que facilitarán el trabajo con documentos TEI, para <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf" target="_blank">Windows</a>, <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank">iOS</a> y <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf">Linux</a>.</p>
-
+A continuación comenzaremos a trabajar un archivo XML-TEI, que les compartiré en el campus, para poder iniciar la incorporación de conceptos, reglas y nociones fundamentales en este lenguaje de marcado.
+Asimismo, el paso que sigue previamente es la instalación de un editor de código, <strong>Visual Studio Code</strong>, creo que la mayoría ya lo tienen instalado. En caso contrario podrán encontrar información sobre dicho proceso <a href="https://code.visualstudio.com/docs/setup/setup-overview" target="_blank">aquí</a>.
 </div>
 </div>
 <div class="container-fluid main-container">
