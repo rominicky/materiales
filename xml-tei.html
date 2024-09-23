@@ -148,7 +148,7 @@
         <li><a href="#section-id1">Conceptos generales de documentos TEI</a></li>
         <li><a href="#section-id2">Estructura de un XML-TEI</a></li>
         <li><a href="#section-id3">Ejemplo de marcado</a></li>
-        <li><a href="#section-id4">Extensiones de VS Code</a></li>
+        <!--<li><a href="#section-id4"></a></li>-->
         <li><a href="#section-id5">Ejercitación</a></li>
       </ul>
     </nav>
@@ -173,35 +173,40 @@ Asunción, &lt;<span style="color: dodgerblue;">date</span>&gt;2 de julio de 155
 <ul>
 <li>Declaración XML, <strong>?xml version=...</strong></li>
 <li>Esquema que se asociar al documento, <strong>?xml-model href...</strong>, <strong>*.rng</strong></li>
-<li>Elemento raíz y declaración del <strong>espacio de nombre</strong> <strong>&lt;TEI xmlns="url"&gt;</strong>, debe tener cierre de etiqueta</li>
+<li>Elemento raíz y declaración del <strong>espacio de nombre</strong> <strong><span style="color: blue;">&lt;TEI xmlns="url"&gt;</span></strong>, debe tener cierre de etiqueta</li>
 <li>Encabezado, <strong>teiHeader</strong>, se debe cerrar la etiqueta</li>
 <li>Cuerpo del texto, <strong>text</strong>, debe tener cierre de etiqueta</li></ul>
 <p>
 Veamos algunos detalles de cada uno. La <strong>primera línea</strong> donde se indica la <strong>declaración XML</strong> no debe ir precedido por ningún otro elemento ni comentarios, así como tampoco por espacio en blanco. Tiene como función crucial indicar el tipo de documento, la versión de estándar XML y la codificación utilizada, cada uno de estos debe ser respetado y señalado correctamente.
 </p>
 <p>Luego sigue la <strong>declaración de modelo XML</strong>, en esta línea indicaremos el esquema RelaxNG. Este especificará el conjunto de reglas que sigue nuestro documento para ser válido. Esto declara los elementos obligatorios, los optativos, atributos que pueden agregarse, etc. La opción que utilizaramos, RelaxNG es altamente recomendada y utilizada por la TEI. Asimismo, este esquema puede personalizarse, esta posibilidad se debe a la forma modular del marcado TEI, a la que nos hemos referido en <a href="marcado_texto-xml.html" target="_blank">¿Qué es TEI?</a><a href="#section-fn1" class="footnote-ref"><sup>1</sup></a>. Es importante que recuerden que el esquema se encuentre en la misma carpeta que el archivo marcado, para que la interación sea correcta, y VS Code pueda indicarnos si el XML-TEI es válido y bien formado.</p>
-<p>A continuación encontraremos la línea de <strong>elemento raíz</strong> y declaración del <strong>espacio de nombres</strong>, El elemento raíz es el contenedor principal de un documento TEI, siempre debe ser &lt;TEI&gt;, y todo el contenido del archivo debe estar dentro de este elemento; además agrupa y organiza otros subelementos, como &lt;teiHeader&gt;, que contiene los metadatos descriptivos (autor, título, fecha, etc.) y &lt;text&gt;, donde se encuentra el cuerpo del texto. Por su parte, el <strong>espacio de nombres</strong> (Namespace), representa una convención que evita conflictos entre nombres de elementos al combinarse diferentes vocabularios XML.</p>
-<p>En el encabezado de TEI &lt;teiHeader&gt;, como se mencionó, se añaden los metadatos del texto y sobre el proceso de codificación. Dentro de este, el único elemento obligatorio es el &lt;fileDesc&gt; <em>(recuerden que es sensible a las mayúsculas y minúsculas)</em>, allí se encontrará &lt;titleStmt&gt;, &lt;publicationStmt&gt; y &lt;sourceDesc&gt;, es decir, la información más importante sobre el documento XML-TEI. El primero de estos tres, refiere al título de la obra a codificar, también puede contener información sobre autor, edición, etc. En <em>publicationStmt</em> se presentará información sobre la publicación digital, editorial, fecha, tipo de licencia, etc. Mientras que en <em>sourceDesc</em> añadiremos la información sobre la fuente primaria, si es manuscrita o impresa, si es obra singular o corpus, etc. En este segmento, también podemos agregar información relativa a la codificación de TEI por medio de &lt;encodingDesc&gt;; al perfil del texto mediante &lt;profileDesc&gt;; y con &lt;revisionDesc&gt; podemos registrar los cambios realizados en el texto digital.</p>
-<p>En el cuerpo del texto, delimitado con la etiqueta &lt;text&gt;, podremos marcar &lt;front&gt;, &lt;body&gt; y &lt;back&gt;. La primera es para codificar paratextos, como ser prefacios, prólogos, etc. Con <em>body</em>, etiqueta obligatoria, marcaremos el texto propiamente dicho; y finalmente con <em>back</em> se puede codificar índices, cronologías, bibliografías, etc.</p>
+<p>A continuación encontraremos la línea de <strong>elemento raíz</strong> y declaración del <strong>espacio de nombres</strong>. El elemento raíz es el contenedor principal de un documento TEI, siempre debe ser <span style="color: blue;">&lt;TEI&gt;</span>, y todo el contenido del archivo debe estar dentro de este elemento; además agrupa y organiza otros subelementos, como <span style="color: blue;">&lt;teiHeader&gt;</span>, que contiene los metadatos descriptivos (autor, título, fecha, etc.) y <span style="color: blue;">&lt;text&gt;</span>, donde se encuentra el cuerpo del texto. Por su parte, el <strong>espacio de nombres</strong> (Namespace), representa una convención que evita conflictos entre nombres de elementos al combinarse diferentes vocabularios XML.</p>
+<p>En el encabezado de TEI <span style="color: blue;">&lt;teiHeader&gt;</span>, como se mencionó, se añaden los metadatos del texto y sobre el proceso de codificación. Dentro de este, el único elemento obligatorio es el <span style="color: blue;">&lt;fileDesc&gt;</span> <em>(recuerden que es sensible a las mayúsculas y minúsculas)</em>, allí se encontrará <span style="color: blue;">&lt;titleStmt&gt;</span>, <span style="color: blue;">&lt;publicationStmt&gt;</span> y <span style="color: blue;">&lt;sourceDesc&gt;</span>, es decir, la información más importante sobre el documento XML-TEI. El primero de estos tres, refiere al título de la obra a codificar, también puede contener información sobre autor, edición, etc. En <em>publicationStmt</em> se presentará información sobre la publicación digital, editorial, fecha, tipo de licencia, etc. Mientras que en <em>sourceDesc</em> añadiremos la información sobre la fuente primaria, si es manuscrita o impresa, si es obra singular o corpus, etc. En este segmento, también podemos agregar información relativa a la codificación de TEI por medio de <span style="color: blue;">&lt;encodingDesc&gt;</span>; al perfil del texto mediante <span style="color: blue;">&lt;profileDesc&gt;</span>; y con <span style="color: blue;">&lt;revisionDesc&gt;</span> podemos registrar los cambios realizados en el texto digital.</p>
+<p>En el cuerpo del texto, delimitado con la etiqueta <span style="color: blue;">&lt;text&gt;</span>, podremos marcar <span style="color: blue;">&lt;front&gt;</span>, <span style="color: blue;">&lt;body&gt;</span> y <span style="color: blue;">&lt;back&gt;</span>. La primera es para codificar paratextos, como ser prefacios, prólogos, etc. Con <em>body</em>, etiqueta obligatoria, marcaremos el texto propiamente dicho; y finalmente con <em>back</em> se puede codificar índices, cronologías, bibliografías, etc.</p>
+<p>Dentro del cuerpo del documento, uno de los elementos más importantes es <span style="color: blue;">&lt;div&gt;</span>, que podrá utilizarse para marcar cualquier tipo de sección estructural del texto, por ejemplo, tomos, volúmenes, capítulos, etc. Identificar diferentes secciones del texto es una buena práctica, y podremos además sumarle un atributo del tipo <span style="color: blue;">&lt;type&gt;</span> que nos ayudará a particularizar cada sección. El valor <span style="color: blue;">type</p> se ajustará a nuestros interes. Otro atributo muy utilizado es <span style="color: blue;">&lt;id&gt; que asigna un identificador único, permitiendo aislar una parte del texto, facilitando así la recuperación de la misma en el texto general.
+</p>
+<p>
+También dentro de <span style="color: blue;">&lt;body&gt;</span> podremos señalar <span style="color: blue;">&lt;head&gt;</span> que nos permitirá el marcado de elementos como títulos, epígrafes, etc., al mismo podremos añadirle atributos como en los elementos anteriormente mencionados. Los párrafos serán la unidad básica de los textos en prosa y se codificarán con <span style="color: blue;">&lt;p&gt;</span>, asimismo se podrían delimitar segmentos por medio de <span style="color: blue;">&lt;s&gt;</span>, indicando con el atributo <span style="color: blue;">&lt;type&gt;</span> su especifidad según nuestras necesidades. 
+</p>
   </div>
 
   <div class="container-fluid main-container">
     <div id="section-id3" class="section level3">
-      <h2>Ejemplo de marcado</h2>
-      <h4>¿Qué?</h4>
+      <h2>Ejemplo de marcado </h2>
+      <p>En esta unidad trabajaremos con la <em>Carta de Isabel de Guevara a la princesa</em>, publicada en 1903 en la obra <em>Viaje al Río de la Plata: (1534-1554)</em> de <em>Ulrich Schmídel</em>. La misma fue obtenida de <a href="https://www.cervantesvirtual.com/obra/viaje-al-rio-de-la-plata-1534-1554/" target="_blank">Cervantes Virtual</a>.</p>
     </div>
   </div>
   <div class="container-fluid main-container">
     <div id="section-id4" class="section level3">
-      <h2>Extensiones de VS Code</h2>
-      <h4>¿Qué?</h4>
+      <h2></h2>
+      
     </div>
-    <p>Las </p>
+    <p> </p>
   </div>
 <div class="container-fluid main-container">
   <div id="section-id5" class="section level3">
     <h2>Ejercitación</h2>
-    <h4>¿Qué?<a href="#section-fn1" class="footnote-ref"><sup>1</sup></a></h4>
+    <p> La carta de Isabel fue codificada con elementos básicos mencionados en este apartado. Asimismo los invito a realizar su propia codificación con el archivo de texto plano. Les recomiendo que primero lo guarden con XML, luego que vayan añadiendo los elementos obligatorios para un XML-TEI bien formado y válido, y finalmente que observen si su archivo es correcto según las Guidelines de TEI.<a href="#section-fn2" class="footnote-ref"><sup>2</sup></a></p>
   </div>
   <p></p>
 </div>
@@ -217,6 +222,7 @@ Veamos algunos detalles de cada uno. La <strong>primera línea</strong> donde se
       <hr />
       <ol>
         <li id="section-fn1"><p>Puede acceder a diversos esquemas personalizados desde <a href="https://tei-c.org/guidelines/customization/" target="_blank">https://tei-c.org/guidelines/customization/</a>. En el siguiente apartado trabajaremos sobre las posibilidades de diseñar nuestro propio RelaxNG.<a href="#section-id3" class="footnote-backref">↩</a></p></li>
+        <li id="section-fn1"><p>Pueden observar los pasos seguidos en la codificación de la carta en el siguiente <a href="https://youtu.be/dmnrNkCj4PM" target="_blank">vídeo</a>.<a href="#section-id3" class="footnote-backref">↩</a></p></li>
       </ol>
     </div>
   </div>
