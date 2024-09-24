@@ -290,20 +290,36 @@ mapa &lt;- addTiles(mapa) #con este comando indicamos que  agregue el tipo de fo
 # Muestra nuestro mapa interactivo
 mapa</code></pre>
   <div id="map">
-    <div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-abc0ccde9c4cd65580c0" style="width:672px;height:480px;">
-    </div>
-    <script type="application/json" data-for="htmlwidget-abc0ccde9c4cd65580c0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-34.64,-58.6],12,[]],"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}]},"evals":[],"jsHooks":[]}</script>
+    <div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-abc0ccde9c4cd65580c0"></div>
+    <script type="application/json" data-for="htmlwidget-abc0ccde9c4cd65580c0">
+      {
+        "x": {
+          "options": {"crs": {"crsClass":"L.CRS.EPSG3857"}},
+          "setView": [[-34.64, -58.6], 12, []],
+          "calls": [{
+            "method":"addTiles",
+            "args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{
+              "minZoom":0,
+              "maxZoom":18,
+              "tileSize":256,
+              "subdomains":"abc",
+              "attribution":"&copy; <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>"
+            }]
+          }]
+        }
+      }
+    </script>
   </div>
 </div>
 
+<!-- Incluimos el script de Leaflet -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var data = document.querySelector('script[data-for="htmlwidget-abc0ccde9c4cd65580c0"]').innerText;
     var config = JSON.parse(data).x;
-
+    
     var map = L.map('htmlwidget-abc0ccde9c4cd65580c0').setView(config.setView[0], config.setView[1]);
-
     L.tileLayer(config.calls[0].args[0], config.calls[0].args[3]).addTo(map);
   });
 </script>
