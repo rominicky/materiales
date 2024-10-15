@@ -1791,7 +1791,7 @@ display: none;
       <ul>
         <li><a href="#section-id1">Introducción al análisis textual estadístico</a></li>
         <li><a href="#section-id2">Características del análisis textual</a></li>
-        <li><a href="#section-id3">Ejemplo de marcado</a></li>
+        <li><a href="#section-id3">Algunas técnicas comunes del análisis textual estadístico</a></li>
         <li><a href="#section-id4">Ejercitación</a></li>
       </ul>
     </nav>
@@ -1908,82 +1908,11 @@ display: none;
       </tbody>
   </table> 
 
-  <h4>Ejemplo mencionado</h4>
-  <blockquote>
-<p>Supongamos un corpus de 5 documentos:</p>
-    <ul>
-    <li>Documento 1: "La silla es cómoda"</li>
-    <li>Documento 2: "La mesa es de madera"</li>
-    <li>Documento 3: "El sillón y la silla son cómodos"</li>
-    <li>Documento 4: "El sofá es grande"</li>
-    <li>Documento 5: "La silla está en el jardín"</li>
-  </ul>
-
-<h5>Cálculos:</h5>
-
-<ol>
-    <li>
-        Calcular TF para la palabra "silla":
-        <ul>
-            <li>Documento 1 (D1): TF = 1/4 = 0.25 (4 palabras en total)</li>
-            <li>Documento 3 (D3): TF = 2/8 = 0.25 (8 palabras en total)</li>
-            <li>Documento 5 (D5): TF = 1/5 = 0.20 (5 palabras en total)</li>
-        </ul>
-    </li>
-    <li>
-        Calcular IDF para "silla":
-        <ul>
-            <li>"silla" aparece en 3 documentos (D1, D3, D5).</li>
-            <li>Total de documentos = 5.</li>
-            <li>IDF = log(5/3) = log(1.67) ≈ 0.51.</li>
-        </ul>
-    </li>
-    <li>
-        Calcular TF-IDF para "silla" en cada documento:
-        <ul>
-            <li>D1: TF-IDF = 0.25 * 0.51 ≈ 0.1275</li>
-            <li>D3: TF-IDF = 0.25 * 0.51 ≈ 0.1275</li>
-            <li>D5: TF-IDF = 0.20 * 0.51 ≈ 0.102</li>
-        </ul>
-    </li>
-</ol>
-
-<h3>Resumen de Resultados</h3>
-
-<table>
-    <thead>
-        <tr>
-            <th>Documento</th>
-            <th>TF</th>
-            <th>IDF</th>
-            <th>TF-IDF</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Documento 1 (D1)</td>
-            <td>0.25</td>
-            <td rowspan="3">0.51</td>
-            <td>0.1275</td>
-        </tr>
-        <tr>
-            <td>Documento 3 (D3)</td>
-            <td>0.25</td>
-            <td>0.1275</td>
-        </tr>
-        <tr>
-            <td>Documento 5 (D5)</td>
-            <td>0.20</td>
-            <td>0.102</td>
-        </tr>
-    </tbody>
-</table></blockquote>
-
     </div>
   </div>
   <div class="container-fluid main-container">
     <div id="section-id4" class="section level3">
-      <h2>Ejercitación</h2>
+      <h2><a href="/unidad2_ej_analisis_textual.html">Ejercitación</a></h2>
     </div>
   </div>
   <div class="container-fluid main-container">
