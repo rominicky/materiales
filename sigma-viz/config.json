@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "HDLAB-CONICET",
+    "link": "",
+    "text": "Romina De León"
+  },
+  "text": {
+    "more": "En este grafo podrás encontrar las relaciones entre personajes de esta crónica, además de pueblos originarios que son mencionados a lo largo de los diferentes capítulos. ",
+    "intro": "Viaje al Río de la Plata (1534-1554). Ulrich Schmidel",
+    "title": "Personajes y pueblos originarios en Viaje al Río de la Plata de Ulrico Schmidel"
+  },
+  "legend": {
+    "edgeLabel": "Capítulos",
+    "colorLabel": "Fancy light",
+    "nodeLabel": "Personajes/Pueblos Originarios"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Label",
+    "hoverBehavior": "default"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": true,
+    "imageAttribute": false
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
