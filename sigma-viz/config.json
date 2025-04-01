@@ -3,18 +3,18 @@
   "version": "1.0",
   "data": "data.json",
   "logo": {
-    "file": "HDLAB-CONICET",
-    "link": "",
-    "text": "Romina De León"
+    "file": "https://raw.githubusercontent.com/hdlabconicet/hdlabconicet.github.io/ba9d69f16b56e09bebdb08545a392d4c20b51905/_includes/logo-hd-iibicrit-grises-footer.svg",
+    "link": "https://hdlab.space/",
+    "text": "Grafo realizado por Romina De León para HDLAB CONICET",
+    "width": 30
   },
   "text": {
-    "more": "En este grafo podrás encontrar las relaciones entre personajes de esta crónica, además de pueblos originarios que son mencionados a lo largo de los diferentes capítulos. ",
-    "intro": "Viaje al Río de la Plata (1534-1554). Ulrich Schmidel",
-    "title": "Personajes y pueblos originarios en Viaje al Río de la Plata de Ulrico Schmidel"
-  },
+    "more": "Este grafo presenta las relaciones entre personajes y pueblos originarios, mencionados a lo largo de los capítulos de la crónica <i>Viaje al Río de la Plata (1534-1554)</i> de Ulrich Schmidel. <br>El tamaño de un nodo es proporcional a la cantidad de conexiones que representa, y los colores de diferenciados de nodos se debe a la importancia del personaje o pueblo. Asimismo, las aristas poseen colores según los capítulos.<br>Mediante las lupas se podrá acercar, alejar y centrar la imagen.",
+    "intro": "Grafo de <a href=\"https://hdlab.space/viaje-al-rio-de-la-plata\">Viaje al Río de la Plata (1534-1554)</a> de Ulrich Schmidel",
+    "title": "Personajes y pueblos originarios en <i>Viaje al Río de la Plata</i> de Ulrico Schmidel"  },
   "legend": {
     "edgeLabel": "Capítulos",
-    "colorLabel": "Fancy light",
+    "colorLabel": "Capítulos",
     "nodeLabel": "Personajes/Pueblos Originarios"
   },
   "features": {
