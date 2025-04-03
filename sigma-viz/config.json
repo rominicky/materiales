@@ -9,17 +9,15 @@
     "width": 30
   },
   "text": {
-    "more": "Este grafo presenta las relaciones entre personajes y pueblos originarios, mencionados a lo largo de los capítulos de la crónica <i>Viaje al Río de la Plata (1534-1554)</i> de Ulrich Schmidel. <br>El tamaño de un nodo es proporcional a la cantidad de conexiones que representa, y los colores de diferenciados de nodos se debe a la importancia del personaje o pueblo. Asimismo, las aristas poseen colores según los capítulos.<br>Mediante las lupas se podrá acercar, alejar y centrar la imagen.",
+    "more": "Este grafo presenta las relaciones entre personajes y pueblos originarios, mencionados a lo largo de los capítulos de la crónica <i>Viaje al Río de la Plata (1534-1554)</i> de Ulrich Schmidel. <br>El tamaño de un nodo es proporcional a la cantidad de conexiones que representa. Los colores diferenciados de nodos se debe a la importancia del personaje o pueblo. Los colores de las aristas poseen son relativos a los capítulos. <br>Mediante las lupas se podrá acercar (+), alejar (-) y centrar la imagen.",
     "intro": "Grafo de <a href=\"https://hdlab.space/viaje-al-rio-de-la-plata\">Viaje al Río de la Plata (1534-1554)</a> de Ulrich Schmidel",
     "title": "Personajes y pueblos originarios en <i>Viaje al Río de la Plata</i> de Ulrico Schmidel"  },
   "legend": {
-    "edgeLabel": "Capítulos",
     "colorLabel": "Capítulos",
     "nodeLabel": "Personajes/Pueblos Originarios"
   },
   "features": {
     "search": true,
-    "groupSelectorAttribute": "Label",
     "hoverBehavior": "default"
   },
   "informationPanel": {

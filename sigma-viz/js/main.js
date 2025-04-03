@@ -527,15 +527,15 @@ function nodeActive(a) {
 	//console.log(sigInst.neighbors);
 
 	if (groupByDirection) {
-		size=Object.size(mutual);
-		f.push("<h2>Mututal (" + size + ")</h2>");
-		(size>0)? f=f.concat(createList(mutual)) : f.push("No mutual links<br>");
+		//size=Object.size(mutual);
+		//f.push("<h2>Mututal (" + size + ")</h2>");
+		//(size>0)? f=f.concat(createList(mutual)) : f.push("No mutual links<br>");
 		size=Object.size(incoming);
-		f.push("<h2>Incoming (" + size + ")</h2>");
-		(size>0)? f=f.concat(createList(incoming)) : f.push("No incoming links<br>");
+		f.push("<h2>Entrantes (" + size + ")</h2>");
+		(size>0)? f=f.concat(createList(incoming)) : f.push("No hay conexiones entrantes<br>");
 		size=Object.size(outgoing);
-		f.push("<h2>Outgoing (" + size + ")</h2>");
-		(size>0)? f=f.concat(createList(outgoing)) : f.push("No outgoing links<br>");
+		f.push("<h2>Salientes (" + size + ")</h2>");
+		(size>0)? f=f.concat(createList(outgoing)) : f.push("No hay conexiones salientes<br>");
 	} else {
 		f=f.concat(createList(sigInst.neighbors));
 	}
@@ -580,7 +580,7 @@ function nodeActive(a) {
         $GP.info_data.html(e.join("<br/>"))
     }
     $GP.info_data.show();
-    $GP.info_p.html("Connections:");
+    $GP.info_p.html("Conexiones:");
     $GP.info.animate({width:'show'},350);
 	$GP.info_donnees.hide();
 	$GP.info_donnees.show();
