@@ -216,3 +216,4 @@ _site/
 Gemfile.lock*
 *.js.map
 *.DS_Store
+/vendor/
