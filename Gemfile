@@ -4,3 +4,4 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem 'jekyll', '~> 4.0' #installs the latest version of 4.x.x
+gem "minima", "~> 2.5"

@@ -1,0 +1,7 @@
+theme: minima  # O tu tema actual
+plugins:
+  - jekyll-sass-converter  # Para procesar SASS
+
+sass:
+  sass_dir: _sass
+  style: compressed

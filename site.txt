@@ -1,0 +1,12 @@
+materiales/
+materiales/
+├── _includes/       # Fragmentos reutilizables
+├── _layouts/        # Plantillas base
+├── _sass/           # Archivos SCSS parciales
+├── _post/
+├── assets/
+│   ├── css/         # CSS generado (auto)
+│   ├── js/          # JavaScript
+│   └── images/      # Imágenes
+├── _config.yml      # Configuración de Jekyll
+└── index.md         # Páginas principales (pueden ser .html o .md)
