@@ -206,3 +206,13 @@ Gemfile.lock*
 ehthumbs.db
 Thumbs.db
 *.css.map
+vendor/
+_site/
+.jekyll-metadata
+.jekyll-cache/
+*.gem
+.bundle
+.sass-cache
+Gemfile.lock*
+*.js.map
+*.DS_Store
