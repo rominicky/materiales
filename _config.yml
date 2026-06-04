@@ -1,7 +1,13 @@
+url: "https://rominicky.github.io"
+baseurl: "/materiales"
+
 theme: minima  # O tu tema actual
+
 plugins:
-  - jekyll-sass-converter  # Para procesar SASS
+  - jekyll-sass-converter
 
 sass:
   sass_dir: _sass
   style: compressed
+
+markdown: kramdown
