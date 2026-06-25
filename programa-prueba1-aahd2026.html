@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programa — VII Congreso AAHD 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,800;0,1000;0,1200;2,800&family=Roboto+Mono&family=Roboto+Serif:wght@800&display=swap');
+
+  /* ── web ── */
+  :root {
+    --bg:        #F7F4EE;
+    --surface:   #FFFFFF;
+    --ink:       #1A1714;
+    --muted:     #6B6560;
+    --rule:      #D9D3CB;
+    
+    --accent1:   #43d392;   
+    --accent2:   #8B4513;   
+    --accent3:   #1B4F72;   
+    --accent-lt: #E8F4F0;
+    
+    --radius:    4px;
+
+    /* Colores de temas */
+    --theme-1: var(--accent1);
+    --theme-2: var(--accent3);
+    --theme-3: #be13e0;
+    --theme-4: var(--accent2);
+    --theme-5: #C0392B;
+    --theme-6: #4646c9;
+    --theme-7: #117A65;
+    --theme-8: #8e8bc3;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Roboto', system-ui, sans-serif;
+    font-size: 20px; 
+    line-height: 1.6;
+  }
+
+  /* ── imagen para header ── */
+  header {
+    background-image: 
+      linear-gradient(#1A1714d9, #1A1714d9), 
+      url('https://raw.githubusercontent.com/rominicky/analisis-doaj/refs/heads/main/encabezado-aahd2026.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 56px 40px 48px;
+    position: relative;
+    overflow: hidden;
+    
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent1) 33%, var(--accent2) 66%, var(--accent3));
+  }
+  
+  .header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px; 
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Roboto', system-ui, sans-serif;
+    font-size: clamp(32px, 6vw, 60px); 
+    font-weight: 400;
+    line-height: 1.1;
+    max-width: 760px;
+    margin-bottom: 20px;
+  }
+  h1 em { font-style: italic; color: #B8D9C8; }
+  .meta-line {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-size: 16px; 
+    color: #ccc;
+  }
+  .meta-line span::before { content: '→ '; color: var(--accent1); }
+
+  
+  .intro-bar {
+    background: var(--accent1);
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 18px; 
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── LAYOUT ── */
+  main { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    padding: 24px 0 8px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 32px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--muted); } 
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; } 
+
+  /* ── bloque dia ── */
+  .day-block { margin-bottom: 56px; }
+  .day-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 20px;
+    align-items: end;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .day-num {
+    font-family: 'Roboto', system-ui, sans-serif;
+    font-size: 72px; 
+    line-height: 1;
+    color: var(--rule);
+    font-weight: 400;
+  }
+  .day-info { padding-bottom: 6px; }
+  .day-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px; 
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .day-title {
+    font-family: 'Roboto', system-ui, sans-serif;
+    font-size: 26px; 
+    font-weight: 400;
+  }
+
+  /* ── destacados diarios ── */
+  .special-event {
+    background: #4d4c4c;
+    color: #f9f6f6;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .special-event .time {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px; 
+    color: #f1f1f1;
+    flex-shrink: 0;
+    width: 65px;
+  }
+  .special-event .ev-title { font-size: 18px; font-weight: 500; }
+  .special-event .ev-sub { font-size: 16px; color: #bbb; }
+
+  /* ── Sesiones ── */
+  .session {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .session-header {
+    display: grid;
+    grid-template-columns: 65px 1fr auto; 
+    gap: 0 16px;
+    align-items: center;
+    padding: 16px 20px;
+    background: #F0EDE8;
+    cursor: pointer;
+    user-select: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .session-header:hover { background: #E8E4DE; }
+  .s-time {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .s-title { font-weight: 600; font-size: 18px; }
+  .s-count {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: var(--muted);
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 2px 10px;
+  }
+  .toggle-icon { color: var(--muted); font-size: 16px; margin-left: 8px; transition: transform .2s; }
+  .session.open .toggle-icon { transform: rotate(180deg); }
+
+  /* ── listas ── */
+  .papers { display: none; }
+  .session.open .papers { display: block; }
+
+  .paper {
+    padding: 16px 20px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 6px 1fr;
+    gap: 0 16px;
+    align-items: start;
+  }
+  .paper:hover { background: #FAFAF8; }
+  .stripe { align-self: stretch; border-radius: 3px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .paper-body {}
+  .paper-title { font-size: 18px; font-weight: 500; line-height: 1.4; margin-bottom: 6px; }
+  .paper-authors { font-size: 15px; color: var(--muted); }
+  .paper-authors .inst { font-style: italic; }
+  .paper-tag {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-top: 8px;
+    color: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .online-badge {
+    display: inline-block;
+    font-size: 12px;
+    background: #FFF3CD;
+    color: #856404;
+    border: 1px solid #FFE08A;
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-left: 8px;
+  }
+
+  /* ── temas a etiquetas ── */
+  .t1, .d1 { background: var(--theme-1); }
+  .t2, .d2 { background: var(--theme-2); }
+  .t3, .d3 { background: var(--theme-3); }
+  .t4, .d4 { background: var(--theme-4); }
+  .t5, .d5 { background: var(--theme-5); }
+  .t6, .d6 { background: var(--theme-6); }
+  .t7, .d7 { background: var(--theme-7); }
+  .t8, .d8 { background: var(--theme-8); }
+
+  .organizers-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+    margin-bottom: 30px;
+    flex-wrap: wrap; 
+  }
+  
+  .organizers-logos a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    border-radius: 8px;
+    height: 70px; 
+    min-width: 160px; 
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .organizers-logos a:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .organizers-logos img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain; /* que la imagen no se deforme */
+  }
+
+  /* ── Footer General ── */
+  .footer-web {
+    background: var(--ink);
+    color: #888;
+    text-align: center;
+    padding: 40px 28px 28px;
+    font-size: 15px;
+    margin-top: 60px;
+  }
+  .footer-web a { color: #aaa; text-decoration: none; }
+  .footer-web a:hover { color: #fff; }
+
+  .footer-print {
+    display: none; /* Oculto en pantalla */
+  }
+
+  /* ── RESPONSIVE  ── */
+  @media (max-width: 600px) {
+    header { padding: 36px 20px 32px; }
+    .intro-bar { padding: 16px 20px; }
+    main { padding: 0 12px 60px; }
+    .session-header { grid-template-columns: 55px 1fr; }
+    .s-count { display: none; }
+  }
+
+    /* ── adaptación PDF ── */
+  
+  @page {
+    size: A4;
+    margin: 15mm 12mm;
+  }
+
+  @media print {
+    :root {
+      --bg:        #FFFFFF; 
+      --surface:   #FFFFFF;
+      --ink:       #000000; 
+      --muted:     #555555;
+      --rule:      #CCCCCC;
+      
+      --accent1:   #333333;
+      --accent2:   #777777;
+      --accent3:   #555555;
+      --accent-lt: #F0F0F0;
+
+      --theme-1: #222222;
+      --theme-2: #444444;
+      --theme-3: #666666;
+      --theme-4: #888888;
+      --theme-5: #333333;
+      --theme-6: #555555;
+      --theme-7: #aaaaaa;
+      --theme-8: #cccccc;
+    }
+
+    body {
+      font-size: 13pt; 
+      background: #ffffff;
+      color: #000000;
+    }
+
+    header {
+      background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+        url('https://www.aacademica.org/aahd2026/header.png') !important;
+      color: #ffffff !important;
+      padding: 30px 40px; 
+    }
+    
+    header::after {
+      display: none; 
+    }
+
+    h1 em { color: #cccccc; } 
+
+    h1, h2, h3, .day-header { page-break-after: avoid; break-after: avoid; }
+    .day-block, .session { page-break-inside: auto; break-inside: auto; }
+
+    .papers { display: block !important; }
+    .toggle-icon { display: none !important; } 
+
+    .paper-tag {
+      color: #000000 !important;
+      border: 1px solid #999999;
+    }
+
+    .meta-line span::before { color: #666666 !important; }
+    .footer-web {
+      display: none !important;
+    }
+
+    .footer-print {
+      display: block !important;
+      text-align: center;
+      font-size: 11pt; 
+      color: #555555;
+      border-top: 1px solid #cccccc; 
+      padding-top: 20px;
+      margin-top: 40px;
+      page-break-inside: avoid; 
+    }
+
+    /* logos */
+    .footer-print .organizers-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-print .organizers-logos img {
+      height: 45px; 
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%) !important; 
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <p class="eyebrow">VII Congreso Internacional · AAHD 2026</p>
+    <h1>El futuro de las <em>Humanidades Digitales</em>: preservación, sustentabilidad y sostenibilidad</h1>
+    <div class="meta-line">
+    <span>11–13 de noviembre de 2026</span>
+    <span>Sede Atlántica · UNRN · Viedma, Río Negro</span>
+    <span>Presencial con plenarias en YouTube</span></div>
+  </div>
+</header>
+<div class="intro-bar">
+  Programa de ponencias — más de 60 presentaciones y 2 paneles organizados temáticamente en 2 días.
+  Haga clic en cada bloque de sesión para ver las ponencias incluidas.
+  Los talleres del primer día son de acceso libre y gratuito para la comunidad.
+</div>
+
+<main>
+
+<div class="legend">
+  <div class="legend-item"><div class="dot d1"></div> HD, infraestructura y soberanía</div>
+  <div class="legend-item"><div class="dot d2"></div> IA, NLP y texto computacional</div>
+  <div class="legend-item"><div class="dot d3"></div> Edición digital y patrimonio</div>
+  <div class="legend-item"><div class="dot d4"></div> Educación y alfabetización</div>
+  <div class="legend-item"><div class="dot d5"></div> Sociedad, cultura y política digital</div>
+  <div class="legend-item"><div class="dot d6"></div> Archivos, museos y preservación</div>
+  <div class="legend-item"><div class="dot d7"></div> Metodología y corpus</div>
+  <div class="legend-item"><div class="dot d8"></div> Arte y literatura digital</div>
+</div>
+
+<div class="day-block">
+  <div class="day-header">
+    <div class="day-num">01</div>
+    <div class="day-info">
+      <div class="day-label">Miércoles · 11 de noviembre de 2026</div>
+      <div class="day-title">Jornada de Talleres</div>
+    </div>
+  </div>
+
+  <div class="special-event">
+    <div class="time">09:00</div>
+    <div><div class="ev-title">Acreditación y apertura</div><div class="ev-sub">Palabras de bienvenida — Comité organizador AAHD · CIEDIS-UNRN</div></div>
+  </div>
+
+  <div class="session open" onclick="toggle(this)">
+  <div class="session-header">
+    <div class="s-time">09:30</div>
+    <div>
+      <div class="s-title">Talleres · Bloque Mañana</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <div class="s-count">4 talleres</div>
+      <div class="toggle-icon">▼</div>
+    </div>
+  </div>
+  <div class="papers">
+
+    <div class="paper">
+      <div class="stripe t7"></div>
+      <div class="paper-body">
+        <div class="paper-title">Metodologías de trabajo en corpus</div>
+        <div class="paper-authors">Pierabella, Silvana · <span class="inst">UNR</span></div>
+        <span class="paper-tag t7">Metodología</span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="stripe t7"></div>
+      <div class="paper-body">
+        <div class="paper-title">Uso de herramientas computacionales para el análisis histórico: ARS y construcción de corpus digitales</div>
+        <div class="paper-authors">Riganti, Valentina · <span class="inst">CONICET/UNS</span></div>
+        <span class="paper-tag t7">Metodología</span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="stripe t1"></div>
+      <div class="paper-body">
+        <div class="paper-title">Fotogrametría y preservación digital: estrategias para la documentación tridimensional del patrimonio</div>
+        <div class="paper-authors">Roteta Lannes, Candela · <span class="inst">CONICET/UNS</span></div>
+        <div class="paper-authors">Canclini, Eunice · <span class="inst">CONICET/UNS</span></div>
+        <span class="paper-tag t1">HD e infraestructura</span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="stripe t7"></div>
+      <div class="paper-body">
+        <div class="paper-title">Construcción de tableros interactivos en Tableau a partir de fuentes históricas</div>
+        <div class="paper-authors">Lissandrello, Guido · <span class="inst">CONICET/FFyL-UBA</span></div>
+        <span class="paper-tag t7">Metodología</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="special-event" style="margin-top:12px">
+    <div class="time">13:00</div>
+    <div><div class="ev-title">Almuerzo libre</div></div>
+  </div>
+
+<div class="session" onclick="toggle(this)">
+  <div class="session-header">
+    <div class="s-time">14:30</div>
+    <div>
+      <div class="s-title">Talleres · Bloque Tarde</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <div class="s-count">4 talleres</div>
+      <div class="toggle-icon">▼</div>
+    </div>
+  </div>
+  <div class="papers">
+
+    <div class="paper">
+      <div class="stripe t3"></div>
+      <div class="paper-body">
+        <div class="paper-title">Reconocimiento y transcripción automática de textos impresos antiguos con Transkribus</div>
+        <div class="paper-authors">De León, Romina · <span class="inst">HD LAB - CONICET</span></div>
+        <span class="paper-tag t3">Edición y patrimonio</span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="stripe t1"></div>
+      <div class="paper-body">
+        <div class="paper-title">Salud y Humanidades Digitales en tiempos de inteligencia artificial: paradigmas, tensiones y alcances</div>
+        <div class="paper-authors">Goldschmidt, Julieta Yasmín · <span class="inst">UBA / UTN</span></div>
+        <span class="paper-tag t1">HD e infraestructura</span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="stripe t2"></div>
+      <div class="paper-body">
+        <div class="paper-title">Inteligencia artificial para la extracción de información en Ciencias Humanas y Sociales: grafos de conocimiento a partir de documentos no estructurados</div>
+        <div class="paper-authors">Cortés, Federico · <span class="inst">CITECDE - UNRN</span></div>
+        <span class="paper-tag t2">IA y NLP</span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="stripe t2"></div>
+      <div class="paper-body">
+        <div class="paper-title">Diagnosticar y reparar textos producidos con inteligencia artificial: criterios lingüísticos y de estilo</div>
+        <div class="paper-authors">Colella, Valeria Magali · Gómez Belart, Nuria · <span class="inst">USAL - CAL</span></div>
+        <span class="paper-tag t2">IA y NLP</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <div class="special-event" style="margin-top:12px">
+    <div class="time">18:00</div>
+    <div><div class="ev-title">Brindis de bienvenida</div><div class="ev-sub">Patio de la Sede Atlántica · UNRN</div></div>
+  </div>
+</div>
+
+
+<div class="day-block">
+  <div class="day-header">
+    <div class="day-num">02</div>
+    <div class="day-info">
+      <div class="day-label">Jueves · 12 de noviembre de 2026</div>
+      <div class="day-title">Archivos, soberanía, metodologías e inteligencia artificial</div>
+    </div>
+  </div>
+
+  <div class="special-event">
+    <div class="time">09:00</div>
+    <div><div class="ev-title">Conferencia plenaria Apertura</div><div class="ev-sub"><strong>AI-ssisted Reading: Modelos de Lenguaje en las Humanidades Digitales — Dra. Rocío Ortuño Casanova</strong> — Transmisión en vivo por YouTube de la AAHD</div></div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">10:30</div>
+      <div>
+        <div class="s-title">Sala A · Archivos, Patrimonio y Arqueología</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Voces veladas: Mujeres, Humanidades Digitales y el archivo colonial en los albores del Virreinato del Perú (siglo XVI)</div>
+          <div class="paper-authors">De León, Romina</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">HUMANIDADES DIGITALES Y ARQUEOLOGÍA DE ALTA MONTAÑA</div>
+          <div class="paper-authors">Ceruti, María Constanza</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">CONSOLIDACIÓN DEL PROCESO DE DIGITALIZACIÓN DE COLECCIONES ARQUEOLÓGICAS DEL MUSEO DE LA PATAGONIA (PNNH-APN)</div>
+          <div class="paper-authors">Bianchi Villelli, Marcia · Piantoni, Giulietta · Paradela, Horacio · Vargas, Emmanuel · Butelman, Matias</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Archivo inmersivo decolonial: diseño, corpus sensorial-ritual y co-diseño comunitario en AMUTUY (Comarca Andina del Paralelo 42)</div>
+          <div class="paper-authors">Burgos, Germán Enrique</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">10:30</div>
+      <div>
+        <div class="s-title">Sala B · Preservación, Colecciones y Digitalización</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">El libro total y el armado de una Biblioteca Virtual</div>
+          <div class="paper-authors">Longoni, Bruno Andrés</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Pulso digital: valoración integral y sostenibilidad sociotécnica de los proyectos digitales del Instituto de Investigaciones Bibliográficas, UNAM</div>
+          <div class="paper-authors">Pruneda Sentíes, David · Galina Russell, Isabel</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Producción científica mundial sobre digitalización documental con tecnologías emergentes en archivos (2023-2026)</div>
+          <div class="paper-authors">ELERA-MENDIETA, ICA</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Las Humanidades Digitales como marco estratégico para la preservación del patrimonio documental: enfoques, prácticas y desafíos</div>
+          <div class="paper-authors">Peña Pimentel, Miriam</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="special-event" style="margin-top:12px">
+    <div class="time">12:00</div>
+    <div><div class="ev-title">Pausa café</div></div>
+  </div>
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">12:30</div>
+      <div>
+        <div class="s-title">Sala A · Inteligencia Artificial, NLP y Texto 1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">Avances en un proyecto de análisis automático del discurso amoroso: Procesamiento del Lenguaje Natural, Minería de Textos...</div>
+          <div class="paper-authors">Nusch, Carlos Javier · del Rio Riande, Gimena · Cagnina, Leticia Cecilia · Errecalde, Marcelo Luis · Antonelli, Leandro</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">Fragmentos Restaurados LLaMA 3 y la Recuperación de Registros Históricos Empresariales</div>
+          <div class="paper-authors">Torres Flawiá, Eugenio</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">“¿Desea actualizar?” Un ejercicio reflexivo sobre el uso de herramientas de IA en la revisión de fuentes históricas publicadas...</div>
+          <div class="paper-authors">García Insausti, Joaquín</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">La herramienta PALABRIA: mucho más que un corrector textual</div>
+          <div class="paper-authors">Muñoz-Merino, Pedro J. · Moreno-Marcos, Pedro Manuel · Centeno Alejandre, Natalia · Serrano Marín, Marina · Pavón Lucero, María Victoria · Delgado Kloos, Carlos</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">12:30</div>
+      <div>
+        <div class="s-title">Sala B · Preservación, Edición y Sustentabilidad</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Preservación, Sustentabilidad y Sostenibilidad de la Bibliodiversidad: Un análisis tripartito del Catálogo Argentina Key Titles</div>
+          <div class="paper-authors">Cabrera, Rosanna · Fábrega, Mariana</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Materialidades tempranas: del objeto al acceso digital</div>
+          <div class="paper-authors">Esnaola, María Marcela · Roteta Lannes, Candela</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t3"></div>
+        <div class="paper-body">
+          <div class="paper-title">La historia de la doncella Tawaddud: un proyecto de edición digital filológica anotada de un manuscrito árabe</div>
+          <div class="paper-authors">Miranda, Florencia Lucía</div>
+          <span class="paper-tag t3">Edición digital y patrimonio</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t3"></div>
+        <div class="paper-body">
+          <div class="paper-title">Entre la palabra y la imagen: sustentabilidad y preservación en una edición digital de las écfrasis del Libro de Alexandre</div>
+          <div class="paper-authors">Calarco, Gabriel</div>
+          <span class="paper-tag t3">Edición digital y patrimonio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="special-event" style="margin-top:12px">
+    <div class="time">14:00</div>
+    <div><div class="ev-title">Almuerzo libre</div></div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">15:00</div>
+      <div>
+        <div class="s-title">Sala A · Sociedad, Espacio y Cartografías Digitales</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t5"></div>
+        <div class="paper-body">
+          <div class="paper-title">Transformación Digital en Río Negro: negociaciones cotidianas en la implementación de la Historia de Salud Integrada (HSI) en CAPS</div>
+          <div class="paper-authors">Cantamutto, Lucía · Eisner, Laura · Pérez, Soledad A.</div>
+          <span class="paper-tag t5">Sociedad, cultura y política digital</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t5"></div>
+        <div class="paper-body">
+          <div class="paper-title">Mapear las desigualdades: análisis georreferenciado de la demanda de atención por violencia de género y la densidad institucional en Bahía Blanca</div>
+          <div class="paper-authors">Riganti, Maria Valentina · Costantino, Agostina · D’Amico Arceo, Octavio · Cantamutto, Francisco</div>
+          <span class="paper-tag t5">Sociedad, cultura y política digital</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">Análisis histórico-espacial de la asignación de tierras en la Patagonia: el caso de Tellier</div>
+          <div class="paper-authors">Navarro, Gustavo</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">(re)Ciclarse en la ciudad: el archivo digital comunitario y la vida póstuma de la ciudad latinoamericana</div>
+          <div class="paper-authors">Zamora, Alejandro</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">15:00</div>
+      <div>
+        <div class="s-title">Sala B · Inteligencia Artificial, NLP y Discurso 2</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">“Programar hablando”: análisis lingüístico de vibe coding con IAGen</div>
+          <div class="paper-authors">de- Matteis, Lorena M. A.</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">Análisis de discurso mediante técnicas de NLP en Python</div>
+          <div class="paper-authors">Daniela</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">Inteligencia artificial y métricas de legibilidad para la implementación del lenguaje claro</div>
+          <div class="paper-authors">Colella, Valeria Magali</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">De los modelos generalistas a las arquitecturas especializadas: competencias cognitivas e inteligencia artificial en Humanidades Digitales</div>
+          <div class="paper-authors">Gómez Belart, Nuria</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="special-event" style="margin-top:12px">
+    <div class="time">17:00</div>
+    <div><div class="ev-title">Pausa café</div></div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">17:30</div>
+      <div>
+        <div class="s-title">Sala A · Metodología, Macroanálisis y Datos</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">3 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">Reflexiones sobre el macroanálisis supervisado de datos en proyectos de Humanidades Digitales</div>
+          <div class="paper-authors">del Rio Riande, Gimena · De León, Romina</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">CoDiCE: una base de datos para el análisis lingüístico de datos digitales</div>
+          <div class="paper-authors">Cantamutto, Lucía · Vela Delfa, Cristina · Boisselier, Leandro</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t5"></div>
+        <div class="paper-body">
+          <div class="paper-title">Mapeando la oferta sexual digital: análisis exploratorio de datos sobre el sistema prostibulario bonaerense (2019-2024)</div>
+          <div class="paper-authors">Riganti, Maria Valentina · Cravero, Fiorella</div>
+          <span class="paper-tag t5">Sociedad, cultura y política digital</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">17:30</div>
+      <div>
+        <div class="s-title">Sala B · Memoria, Archivo y Curaduría</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">3 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Transitando el archivo: una cartografía de los afectos a partir del archivo fotográfico de Alberto Saldarriaga</div>
+          <div class="paper-authors">Martínez, Tatihana</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Ruinas de la web temprana: poesía.com y la materialidad del archivo digital</div>
+          <div class="paper-authors">Lopez Salvá, Magdalena</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t6"></div>
+        <div class="paper-body">
+          <div class="paper-title">Medidas de prevención, preservación digital y curaduría de datos en plataformas de mensajería instantánea: El rol de la inteligencia artificial</div>
+          <div class="paper-authors">Di Gionantonio, Alejandra · Ligorria, Laura · Manera, Roxana · Di Gionantonio, Mairena · Peralta, Lorena · Contrera, Luis</div>
+          <span class="paper-tag t6">Archivos, museos y preservación</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- PANELES TEMÁTICOS / MESA REDONDA -->
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header" style="background:#8f909246">
+      <div class="s-time">19:00</div>
+      <div>
+        <div class="s-title">Paneles Temáticos Centrales y Encuentro de grupos de interés AAHD</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">2 paneles</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t1"></div>
+        <div class="paper-body">
+          <div class="paper-title">HD LAB: una apuesta por la sostenibilidad, sustentabilidad y preservación en Humanidades Digitales</div>
+          <div class="paper-authors">del Rio, Gimena · De León, Romina · Calarco, Gabriel · Volkind, Laura · Hernández, Nidia</div>
+          <span class="paper-tag t1">HD, infraestructura y soberanía</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t5"></div>
+        <div class="paper-body">
+          <div class="paper-title">Puentes hacia la justicia hídrica: memoria ambiental y tecnologías participativas</div>
+          <div class="paper-authors">Liberman, Mariana · Birochio, Diego · Musi Saluj, Cristian · Zangra, Alejandro · Viladrich, Leonel</div>
+          <span class="paper-tag t5">Sociedad, cultura y política digital</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ==============================================
+     DÍA 3: VIERNES 13 DE NOVIEMBRE
+=============================================== -->
+<div class="day-block">
+  <div class="day-header">
+    <div class="day-num">03</div>
+    <div class="day-info">
+      <div class="day-label">Viernes · 13 de noviembre de 2026</div>
+      <div class="day-title">Educación, sociedad digital, edición y arte</div>
+    </div>
+  </div>
+
+  <div class="special-event">
+    <div class="time">09:00</div>
+    <div><div class="ev-title">Acreditación remanente</div></div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">09:00</div>
+      <div>
+        <div class="s-title">Sala A · Educación y Alfabetización Digital</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t4"></div>
+        <div class="paper-body">
+          <div class="paper-title">Ingresantes universitarios y percepciones sobre IA. Explorando en la Lic. en Sistemas de la Universidad Nacional de Río Negro</div>
+          <div class="paper-authors">Llancapan, Emanuel · Lovos, Edith · Cantamutto, Lucía</div>
+          <span class="paper-tag t4">Educación y alfabetización</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t4"></div>
+        <div class="paper-body">
+          <div class="paper-title">Escribir con IA: mediaciones tecnológicas y desafíos para la alfabetización académica</div>
+          <div class="paper-authors">Caixeta, Nájla · Cariaga, Romina</div>
+          <span class="paper-tag t4">Educación y alfabetización</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t4"></div>
+        <div class="paper-body">
+          <div class="paper-title">Objetos técnicos y regímenes en conflicto en la educación nacida digital</div>
+          <div class="paper-authors">Kesler, Betina</div>
+          <span class="paper-tag t4">Educación y alfabetización</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t4"></div>
+        <div class="paper-body">
+          <div class="paper-title">La utilidad de Wikipedia en espacios educativos</div>
+          <div class="paper-authors">Luna Chaves</div>
+          <span class="paper-tag t4">Educación y alfabetización</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">09:00</div>
+      <div>
+        <div class="s-title">Sala B · Edición Digital, NLP y Literatura</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t3"></div>
+        <div class="paper-body">
+          <div class="paper-title">Fanzines argentinos: experiencias de digitalización y publicación "mínimas"</div>
+          <div class="paper-authors">del Rio Riande, Gimena · Volkind, Laura</div>
+          <span class="paper-tag t3">Edición digital y patrimonio</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">Una experiencia de anotación lingüística para el desarrollo de un sistema de clasificación automática de textos periodísticos</div>
+          <div class="paper-authors">de- Matteis, Lorena M. A. · Martín Istilart, Rocío · Frapolli, Diamela · Chaparro, Aylén · Saint Lary, Stefania · Orler, Emanuel · Maguitman, Ana · Soto, Axel</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t3"></div>
+        <div class="paper-body">
+          <div class="paper-title">Las poesías de la Historia troyana polimétrica: una propuesta de edición digital y estudio</div>
+          <div class="paper-authors">Miguens, Agustina</div>
+          <span class="paper-tag t3">Edición digital y patrimonio</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t3"></div>
+        <div class="paper-body">
+          <div class="paper-title">Del patrimonio bibliográfico al grafo de conocimiento: una experiencia de datos enlazados para visibilizar a las mujeres en el Derecho...</div>
+          <div class="paper-authors">Jeria Carvajal, Esther · Maulen León, Carolina</div>
+          <span class="paper-tag t3">Edición digital y patrimonio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="special-event" style="margin-top:12px">
+    <div class="time">11:00</div>
+    <div><div class="ev-title">Pausa café</div></div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">11:30</div>
+      <div>
+        <div class="s-title">Sala A · Infraestructura, Ciencia Abierta y Soberanía</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t1"></div>
+        <div class="paper-body">
+          <div class="paper-title">Inteligencia artificial sobre infraestructura local: un proyecto de gestión del patrimonio documental con soberanía tecnológica y de datos</div>
+          <div class="paper-authors">Archuby, Gustavo · Gonzalez, Claudia</div>
+          <span class="paper-tag t1">HD, infraestructura y soberanía</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t1"></div>
+        <div class="paper-body">
+          <div class="paper-title">Inteligencia artificial situada y soberanía tecnológica: Modelos de Lenguaje Compactos (SLMs) de código abierto en entornos educativos...</div>
+          <div class="paper-authors">Cámera, Cecilia Edith · García Poggi, Ramiro · Boisselier, Leandro</div>
+          <span class="paper-tag t1">HD, infraestructura y soberanía</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t1"></div>
+        <div class="paper-body">
+          <div class="paper-title">CIENCIA ABIERTA Y DATOS DIGITALES EN CONTEXTOS SITUADOS: GOBERNANZA Y SOBERANIA</div>
+          <div class="paper-authors">Mengoni Goñalons, Guillermo L. · Figuerero Torres, María José</div>
+          <span class="paper-tag t1">HD, infraestructura y soberanía</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t1"></div>
+        <div class="paper-body">
+          <div class="paper-title">Infraestructuras de la digitalización: más que un problema de escala</div>
+          <div class="paper-authors">Gionco, Pamela</div>
+          <span class="paper-tag t1">HD, infraestructura y soberanía</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">11:30</div>
+      <div>
+        <div class="s-title">Sala B · Epistemologías, Dispositivos y Esfera Pública</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t5"></div>
+        <div class="paper-body">
+          <div class="paper-title">Humanidades Digitales y variedades de la ciencia: epistemologías localizadas</div>
+          <div class="paper-authors">Peña Pimentel, Miriam · Barrón Tovar, José Francisco</div>
+          <span class="paper-tag t5">Sociedad, cultura y política digital</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">Humanidades digitales y dispositivos de campo: la inventiva etnográfica en el estudio de prácticas digitaletradas</div>
+          <div class="paper-authors">Eisner, Laura</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t2"></div>
+        <div class="paper-body">
+          <div class="paper-title">Contra la automatización tecnosolucionista: diseño defensivo, duda y human-in-the-loop en la transcripción de prensa decimonónica</div>
+          <div class="paper-authors">Farias, Macarena</div>
+          <span class="paper-tag t2">IA, NLP y texto computacional</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t8"></div>
+        <div class="paper-body">
+          <div class="paper-title">Usos y funciones que la esfera pública le atribuye a la literatura: un aporte desde las Humanidades Digitales</div>
+          <div class="paper-authors">Alzate Gallo, Dora Cecilia · Pino Posada, Juan Pablo</div>
+          <span class="paper-tag t8">Arte y literatura digital</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="special-event" style="margin-top:12px">
+    <div class="time">13:00</div>
+    <div><div class="ev-title">Almuerzo libre</div></div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">14:00</div>
+      <div>
+        <div class="s-title">Sala A · Redes, Discurso y Sector Editorial</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">4 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">Colegios invisibles y capital simbólico: Análisis de las redes de mentoría en el sector editorial argentino (1991-2025)</div>
+          <div class="paper-authors">Dato, Hebe · Passo, Jorgelina</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">Orígenes, profesionalización y redes de la industria editorial argentina (1780-1943): Estructuración de datos y análisis relacional...</div>
+          <div class="paper-authors">Stecco, Jesica · Cano, Ana Ximena</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">Herramientas digitales para el Análisis Crítico del Discurso: representaciones del 12 de octubre en La Gaceta de Tucumán</div>
+          <div class="paper-authors">Nuñez, María Laura · Alonso Olivera, María Elisa</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">Inscripciones de lectura cercana en el paisaje lingüístico parasitario: potencialidades y límites de las humanidades digitales ante un corpus situado y no estándar</div>
+          <div class="paper-authors">Ares, Ludmila</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">14:00</div>
+      <div>
+        <div class="s-title">Sala B · Aprendizaje y Ecosistemas de Investigación</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">3 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t4"></div>
+        <div class="paper-body">
+          <div class="paper-title">Reconfiguraciones del aprendizaje colectivo en la Patagonia Norte: aportes epistémicos desde una mirada crítica decolonial</div>
+          <div class="paper-authors">Honcharuk, Mileva Soraya · Marin Aranda, María Alejandra</div>
+          <span class="paper-tag t4">Educación y alfabetización</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t4"></div>
+        <div class="paper-body">
+          <div class="paper-title">La calidad educativa en disputa: una mirada tecnopolítica a los entornos virtuales desde las Humanidades Digitales Críticas</div>
+          <div class="paper-authors">Svensson, Viviana</div>
+          <span class="paper-tag t4">Educación y alfabetización</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t4"></div>
+        <div class="paper-body">
+          <div class="paper-title">Aporte para un ecosistema digital de investigación: integración dinámica Zotero-Moodle mediante un script desarrollado con IA.</div>
+          <div class="paper-authors">Lanza, Luis Alberto</div>
+          <span class="paper-tag t4">Educación y alfabetización</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="special-event" style="margin-top:12px">
+    <div class="time">15:30</div>
+    <div><div class="ev-title">Pausa café</div></div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">16:00</div>
+      <div>
+        <div class="s-title">Sala A · Soberanía e Institucionalización</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">3 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t5"></div>
+        <div class="paper-body">
+          <div class="paper-title">¿En qué lengua citamos (todavía)? Geopolítica, género y multilingüismo en las Humanidades Digitales hispanohablantes</div>
+          <div class="paper-authors">Isasi, Jennifer · del Rio Riande, Gimena</div>
+          <span class="paper-tag t5">Sociedad, cultura y política digital</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t1"></div>
+        <div class="paper-body">
+          <div class="paper-title">CREACIÓN, PUESTA EN MARCHA Y CONSOLIDACIÓN DEL UN COLABORATORIO DE HUMANIDADES DIGITALES EN UN LA UNIVERSIDAD INDUSTRIAL DE SANTANDER</div>
+          <div class="paper-authors">Loaiza-Giraldo, Ana Maria · Ciro, Jhon Edward</div>
+          <span class="paper-tag t1">HD, infraestructura y soberanía</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t1"></div>
+        <div class="paper-body">
+          <div class="paper-title">SoberanIA: Inferencia Local, Optimización Austera y Autonomía Pedagógica desde la Patagonia</div>
+          <div class="paper-authors">Novoa, Daniel Ricardo</div>
+          <span class="paper-tag t1">HD, infraestructura y soberanía</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session" onclick="toggle(this)">
+    <div class="session-header">
+      <div class="s-time">16:00</div>
+      <div>
+        <div class="s-title">Sala B · Praxis e Intervención</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="s-count">3 ponencias</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="papers">
+      <div class="paper">
+        <div class="stripe t7"></div>
+        <div class="paper-body">
+          <div class="paper-title">Investigación en Humanidades mediante medios digitales: análisis metodológico del empleo de WhatsApp como instrumento para la implementación de una entrevista digital.</div>
+          <div class="paper-authors">Cantamutto, Lucía · Vercellino, Soledad</div>
+          <span class="paper-tag t7">Metodología y corpus</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t5"></div>
+        <div class="paper-body">
+          <div class="paper-title">Las HD como intervención y frontera: hacia la Bienal RosaRIO</div>
+          <div class="paper-authors">Brussa, Virginia</div>
+          <span class="paper-tag t5">Sociedad, cultura y política digital</span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="stripe t1"></div>
+        <div class="paper-body">
+          <div class="paper-title">Hacia una praxis situada: institucionalización incipiente de las Humanidades Digitales en la Universidad Nacional de La Pampa</div>
+          <div class="paper-authors">Roca, Ignacio</div>
+          <span class="paper-tag t1">HD, infraestructura y soberanía</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="special-event" style="margin-top:12px">
+    <div class="time">18:00</div>
+    <div>
+      <div class="ev-title" style="margin-bottom:4px;">Conferencia plenaria de Clausura</div>
+      <div class="ev-sub"><strong>Still, We Build: Collaboration Across Borders in Digital Humanities — Brian Rosenblum</strong> — Transmisión en vivo por YouTube de la AAHD</div>
+    </div>
+  </div>
+  
+  <div class="special-event">
+    <div class="time">19:30</div>
+    <div>
+      <div class="ev-title" style="margin-bottom:4px;">Acto de cierre</div>
+      <div class="ev-sub">Palabras finales y anuncio de próxima sede — Sala principal, Sede Atlántica UNRN</div>
+    </div>
+  </div>
+
+  <div class="special-event" style="background:#8B4513; color:#fff;">
+    <div class="time">21:00</div>
+    <div>
+      <div class="ev-title" style="margin-bottom:4px;">Cena de camaradería y cierre</div>
+      <div class="ev-sub" style="color:#e8e4de;">Lugar a confirmar por el comité organizador</div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer-web">
+  <div class="organizers-logos">
+    <a href="https://www.unrn.edu.ar/" target="_blank">
+      <img src="https://raw.githubusercontent.com/rominicky/analisis-doaj/refs/heads/main/ciedis-unrn.jpg" alt="CIEDIS">
+    </a>
+    <a href="https://aahd.net.ar/" target="_blank">
+      <img src="https://raw.githubusercontent.com/rominicky/analisis-doaj/refs/heads/main/logo-aahd.jpg" alt="AAHD">
+    </a>
+    <a href="http://hdlab.space/" target="_blank">
+      <img src="https://raw.githubusercontent.com/rominicky/analisis-doaj/refs/heads/main/logo%20dh%20lab%20iibicrit.png" alt="HD LAB - IIBICRIT - CONICET">
+    </a>
+  </div>
+
+  <p>VII Congreso Internacional de la Asociación Argentina de Humanidades Digitales · Viedma, Río Negro · 11–13 noviembre 2026</p>
+  <p style="margin-top:6px"><a href="https://www.aacademica.org/aahd2026">aacademica.org/aahd2026</a> · <a href="mailto:congresoaahd@gmail.com">congresoaahd@gmail.com</a></p>
+  <p style="margin-top:6px">Este programa es preliminar y sujeto a cambios por parte del comité organizador.</p>
+</footer>
+
+<footer class="footer-print">
+  <div class="organizers-logos">
+    <img src="https://raw.githubusercontent.com/rominicky/analisis-doaj/refs/heads/main/ciedis-unrn.jpg" alt="CIEDIS">
+    <img src="https://raw.githubusercontent.com/rominicky/analisis-doaj/refs/heads/main/logo-aahd.jpg" alt="AAHD">
+    <img src="https://raw.githubusercontent.com/rominicky/analisis-doaj/refs/heads/main/logo%20dh%20lab%20iibicrit.png" alt="HD LAB - IIBICRIT - CONICET">
+  </div>
+
+  <p><strong>AAHD 2026 · VII Congreso Internacional</strong></p>
+  <p>Sede Atlántica UNRN · Viedma, Río Negro</p>
+  <p>Más información y programa actualizado en: <strong>aacademica.org/aahd2026</strong></p>
+</footer>
+
+<script>
+  function toggle(el) {
+    el.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
